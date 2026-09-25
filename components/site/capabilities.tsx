@@ -5,10 +5,10 @@ import { Reveal, ScrollFocusCard } from "./reveal"
 
 export function Capabilities() {
   return (
-    <section className="relative border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
+    <section className="relative border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col justify-between gap-6 border-b border-[#CBD5E1] pb-8 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between gap-6 border-b border-[#CBD5E1] pb-6 sm:pb-7 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <Reveal
               as="h2"
@@ -24,11 +24,11 @@ export function Capabilities() {
         </div>
 
         {/* 3 Capabilities Grid - smoothly loads each option one after another on scroll */}
-        <div className="mt-10 grid grid-cols-1 gap-7 md:grid-cols-3">
+        <div className="mt-8 sm:mt-9 grid grid-cols-1 gap-7 md:grid-cols-3">
           {services.map((service, i) => (
             <ScrollFocusCard
               key={service.index}
-              delay={i * 200}
+              delay={i * 280}
               className="group relative flex flex-col justify-between rounded-2xl border border-[#CBD5E1] bg-white p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] cursor-pointer"
             >
               <div>

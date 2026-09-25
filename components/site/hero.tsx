@@ -16,7 +16,7 @@ export function Hero() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <section id="top" className="relative overflow-hidden bg-background pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
+    <section id="top" className="relative overflow-hidden bg-background pt-22 pb-8 sm:pt-24 sm:pb-10 lg:pt-28 lg:pb-12">
       {/* Subtle 2SR Brand Watermark (directly echoing the official company letterhead) */}
       <div 
         className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.03] select-none"
@@ -39,20 +39,9 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Editorial Headline & Actions */}
           <div className="lg:col-span-6 xl:col-span-6">
-            {/* Pill Kicker */}
-            <div
-              className={cn(
-                "reveal mb-6 inline-flex items-center gap-2 rounded-full border border-[#D0DBEA] bg-[#F0F5FA] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]",
-                mounted && "is-visible",
-              )}
-            >
-              <span className="h-2 w-2 rounded-full bg-[#0052CC] animate-pulse" />
-              <span>2SR Innovations &middot; Est. 2019</span>
-            </div>
-
             {/* Main Editorial Headline */}
             <h1 className="font-serif text-[clamp(3.1rem,6.8vw,6.4rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]">
               {headlineWords.map((word) => (

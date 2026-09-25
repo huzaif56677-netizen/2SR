@@ -18,7 +18,7 @@ export default function IndustriesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#CBD5E1] bg-background py-12 sm:py-16 lg:py-20">
+        <section className="border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -40,13 +40,13 @@ export default function IndustriesPage() {
         </section>
 
         {/* Industries Architectural Grid */}
-        <section className="bg-background py-14 sm:py-18 lg:py-20">
+        <section className="bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
               {industrySectors.map((sector, i) => (
                 <ScrollFocusCard
                   key={sector.category}
-                  delay={(i % 3) * 160}
+                  delay={(i % 3) * 260}
                   className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#CBD5E1] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.03)] cursor-pointer"
                 >
                   <div>
@@ -107,7 +107,7 @@ export default function IndustriesPage() {
             </div>
 
             {/* Bottom Callout */}
-            <div className="mt-20 border-t border-[#E2E8F0] pt-16 text-center">
+            <div className="mt-14 border-t border-[#E2E8F0] pt-10 text-center">
               <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                 Operating in a specialized or niche industry?
               </h3>

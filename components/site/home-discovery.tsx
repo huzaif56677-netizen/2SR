@@ -39,7 +39,7 @@ const discoverySections = [
 
 export function HomeDiscovery() {
   return (
-    <section className="relative border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
+    <section className="relative border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col justify-between gap-6 border-b border-[#CBD5E1] pb-8 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
@@ -64,7 +64,7 @@ export function HomeDiscovery() {
           {discoverySections.map((item, i) => (
             <ScrollFocusCard
               key={item.title}
-              delay={i * 150}
+              delay={i * 240}
               className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#CBD5E1] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-pointer"
             >
               <div>

@@ -41,7 +41,7 @@ export default function ApproachPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -63,7 +63,7 @@ export default function ApproachPage() {
         </section>
 
         {/* 5 Stages Detail */}
-        <section className="border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
+        <section className="border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
               {/* Sticky Sidebar on Desktop */}
@@ -94,7 +94,7 @@ export default function ApproachPage() {
               {/* Sequential Steps */}
               <div className="lg:col-span-8 divide-y divide-[#CBD5E1]">
                 {approach.map((item, i) => (
-                  <Reveal key={item.step} delay={i * 100} className="grid grid-cols-1 gap-6 py-8 sm:grid-cols-12 sm:gap-8">
+                  <Reveal key={item.step} delay={i * 200} className="grid grid-cols-1 gap-6 py-8 sm:grid-cols-12 sm:gap-8">
                     <div className="sm:col-span-2">
                       <span className="font-serif text-4xl font-medium text-[#0052CC]">{item.step}</span>
                     </div>
@@ -117,7 +117,7 @@ export default function ApproachPage() {
         </section>
 
         {/* Quality Assurance Principles */}
-        <section className="bg-background py-14 sm:py-18 lg:py-20">
+        <section className="bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
               <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0052CC]">
@@ -132,7 +132,7 @@ export default function ApproachPage() {
               {executionPillars.map((p, i) => (
                 <ScrollFocusCard
                   key={p.num}
-                  delay={i * 140}
+                  delay={i * 240}
                   className="rounded-2xl border border-[#CBD5E1] bg-white p-7 shadow-xs cursor-pointer"
                 >
                   <span className="font-serif text-sm font-semibold text-[#0052CC]">{p.num}</span>
@@ -142,7 +142,7 @@ export default function ApproachPage() {
               ))}
             </div>
 
-            <div className="mt-16 rounded-2xl border border-[#E2E8F0] bg-white p-8 text-center sm:p-12 shadow-sm">
+            <div className="mt-12 rounded-2xl border border-[#E2E8F0] bg-white p-8 text-center sm:p-12 shadow-sm">
               <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                 Experience the 2SR difference on your next project.
               </h3>

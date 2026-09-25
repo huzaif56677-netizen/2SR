@@ -17,7 +17,7 @@ export function WorkClient() {
       : projects.filter((p) => p.pillar.toLowerCase() === activeCategory.toLowerCase())
 
   return (
-    <div className="bg-background py-16 sm:py-20 lg:py-24">
+    <div className="bg-background py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Filter Navigation Tabs */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E2E8F0] pb-6">
@@ -45,7 +45,7 @@ export function WorkClient() {
         </div>
 
         {/* Case Studies List */}
-        <div className="mt-12 space-y-10">
+        <div className="mt-8 space-y-8">
           {filteredProjects.map((project) => (
             <article
               key={project.id}

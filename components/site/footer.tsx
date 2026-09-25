@@ -15,7 +15,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-[#E2E8F0] bg-[#F8FAFC] text-[#0A1128] transition-colors">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1400px] px-5 py-12 sm:px-8 lg:px-12 lg:py-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Info */}
           <div className="lg:col-span-5">

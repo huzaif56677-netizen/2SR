@@ -17,7 +17,7 @@ export default function WorkPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -42,7 +42,7 @@ export default function WorkPage() {
         <WorkClient />
 
         {/* Work Page Consultation CTA */}
-        <section className="border-t border-[#E2E8F0] bg-[#F8FAFC] py-20 text-center">
+        <section className="border-t border-[#E2E8F0] bg-[#F8FAFC] py-12 sm:py-14 text-center">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
               Have a similar engagement to execute?

@@ -37,7 +37,7 @@ export function Wordmark({
           <span className={cn("font-serif font-bold tracking-tight silver-metallic", dimensions.font)}>
             2SR
           </span>
-          <span className={cn("font-serif font-medium tracking-tight silver-metallic-subtle", dimensions.font)}>
+          <span className={cn("font-serif font-medium tracking-tight silver-metallic", dimensions.font)}>
             Innovations
           </span>
         </div>

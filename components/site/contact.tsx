@@ -42,7 +42,7 @@ export function Contact({
   }
 
   return (
-    <section id={id} className="relative border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
+    <section id={id} className="relative border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Context & Contact Details */}

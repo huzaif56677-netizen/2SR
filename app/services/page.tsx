@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Header */}
-        <section className="border-b border-[#E2E8F0] bg-background py-12 sm:py-16 lg:py-20">
+        <section className="border-b border-[#E2E8F0] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
 
             <Reveal
@@ -57,7 +57,7 @@ export default function ServicesPage() {
               <section
                 key={service.id}
                 id={service.id}
-                className="scroll-mt-24 py-14 sm:py-18 lg:py-20"
+                className="scroll-mt-24 py-10 sm:py-12 lg:py-14"
               >
                 <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
                   {/* Service Header Row */}
@@ -162,7 +162,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Global CTA Section */}
-        <section className="border-t border-[#E2E8F0] bg-[#F8FAFC] py-20 sm:py-24">
+        <section className="border-t border-[#E2E8F0] bg-[#F8FAFC] py-12 sm:py-14 lg:py-16">
           <div className="mx-auto max-w-[1400px] px-5 text-center sm:px-8 lg:px-12">
             <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
               Require a tailored engagement or multi-disciplinary package?

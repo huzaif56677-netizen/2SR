@@ -3,7 +3,7 @@ import { Reveal, ScrollFocusCard } from "./reveal"
 
 export function Why() {
   return (
-    <section className="relative border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
+    <section className="relative border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Heading & Premise */}
@@ -32,7 +32,7 @@ export function Why() {
               {differentiators.map((item, i) => (
                 <ScrollFocusCard
                   key={item.number}
-                  delay={i * 180}
+                  delay={i * 260}
                   className="group flex flex-col justify-between rounded-2xl border border-[#CBD5E1] bg-white p-7 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] cursor-pointer"
                 >
                   <div>
@@ -56,7 +56,7 @@ export function Why() {
 
               {/* Stat card */}
               <ScrollFocusCard
-                delay={4 * 180}
+                delay={4 * 260}
                 className="flex flex-col justify-center rounded-2xl border border-[#0A1128] bg-[#0A1128] p-7 sm:p-8 text-center sm:text-left text-white shadow-lg cursor-pointer"
               >
                 <p className="font-serif text-4xl font-normal text-white">5+ Years</p>
