@@ -49,7 +49,7 @@ export function WorkClient() {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              className="group grid grid-cols-1 items-center gap-8 rounded-2xl border border-[#E2E8F0] bg-white p-7 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)] lg:grid-cols-12 lg:gap-12"
+              className="newgen-card group grid grid-cols-1 items-center gap-8 rounded-2xl border border-[#CBD5E1] bg-white p-7 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] lg:grid-cols-12 lg:gap-12 cursor-pointer"
             >
               {/* Project Image */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] lg:col-span-5">

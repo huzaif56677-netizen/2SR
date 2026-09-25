@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Reveal } from "./reveal"
+import { Reveal, ScrollFocusCard } from "./reveal"
 
 const discoverySections = [
   {
@@ -39,9 +39,9 @@ const discoverySections = [
 
 export function HomeDiscovery() {
   return (
-    <section className="relative border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
+    <section className="relative border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        <div className="flex flex-col justify-between gap-6 border-b border-[#E2E8F0] pb-12 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between gap-6 border-b border-[#CBD5E1] pb-8 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -49,23 +49,23 @@ export function HomeDiscovery() {
             </Reveal>
             <Reveal
               as="h2"
-              delay={80}
+              delay={60}
               className="text-balance font-serif text-[clamp(2.4rem,5vw,4.2rem)] font-normal leading-[1.04] tracking-tight text-[#0A1128]"
             >
               Discover the organization behind the results.
             </Reveal>
           </div>
-          <Reveal as="p" delay={140} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#334155] sm:text-lg">
+          <Reveal as="p" delay={120} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#334155] sm:text-lg">
             Explore our company history, disciplined delivery framework, cross-industry expertise, and past engagements.
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {discoverySections.map((item, i) => (
-            <Reveal
+            <ScrollFocusCard
               key={item.title}
-              delay={i * 100}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
+              delay={i * 150}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#CBD5E1] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-pointer"
             >
               <div>
                 <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#F1F5F9]">
@@ -103,7 +103,7 @@ export function HomeDiscovery() {
                   <span className="text-sm">&rarr;</span>
                 </Link>
               </div>
-            </Reveal>
+            </ScrollFocusCard>
           ))}
         </div>
       </div>

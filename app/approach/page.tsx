@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
-import { Reveal } from "@/components/site/reveal"
+import { Reveal, ScrollFocusCard } from "@/components/site/reveal"
 import { approach } from "@/lib/site-data"
 
 export const metadata: Metadata = {
@@ -63,9 +63,9 @@ export default function ApproachPage() {
         </section>
 
         {/* 5 Stages Detail */}
-        <section className="border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
+        <section className="border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
               {/* Sticky Sidebar on Desktop */}
               <div className="lg:col-span-4">
                 <div className="lg:sticky lg:top-28">
@@ -75,11 +75,11 @@ export default function ApproachPage() {
                   <h2 className="mt-3 font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                     Predictable outcomes through disciplined steps.
                   </h2>
-                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#475569]">
+                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#334155]">
                     By standardizing discovery, planning, execution, verification, and support, we ensure every stakeholder experiences clarity at every juncture.
                   </p>
 
-                  <div className="mt-8 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] shadow-md">
+                  <div className="mt-8 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#CBD5E1] bg-[#F1F5F9] shadow-md">
                     <Image
                       src="/images/collaboration.png"
                       alt="Team executing a structured corporate engagement"
@@ -92,9 +92,9 @@ export default function ApproachPage() {
               </div>
 
               {/* Sequential Steps */}
-              <div className="lg:col-span-8 divide-y divide-[#E2E8F0]">
-                {approach.map((item) => (
-                  <Reveal key={item.step} className="grid grid-cols-1 gap-6 py-10 sm:grid-cols-12 sm:gap-8">
+              <div className="lg:col-span-8 divide-y divide-[#CBD5E1]">
+                {approach.map((item, i) => (
+                  <Reveal key={item.step} delay={i * 100} className="grid grid-cols-1 gap-6 py-8 sm:grid-cols-12 sm:gap-8">
                     <div className="sm:col-span-2">
                       <span className="font-serif text-4xl font-medium text-[#0052CC]">{item.step}</span>
                     </div>
@@ -117,7 +117,7 @@ export default function ApproachPage() {
         </section>
 
         {/* Quality Assurance Principles */}
-        <section className="bg-background py-20 sm:py-28 lg:py-32">
+        <section className="bg-background py-14 sm:py-18 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
               <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0052CC]">
@@ -128,16 +128,17 @@ export default function ApproachPage() {
               </h2>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {executionPillars.map((p) => (
-                <div
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {executionPillars.map((p, i) => (
+                <ScrollFocusCard
                   key={p.num}
-                  className="rounded-2xl border border-[#E2E8F0] bg-white p-7 shadow-xs transition-colors hover:border-[#0052CC]/50"
+                  delay={i * 140}
+                  className="rounded-2xl border border-[#CBD5E1] bg-white p-7 shadow-xs cursor-pointer"
                 >
                   <span className="font-serif text-sm font-semibold text-[#0052CC]">{p.num}</span>
                   <h4 className="mt-3 font-serif text-xl font-normal text-[#0A1128]">{p.title}</h4>
                   <p className="mt-3 text-pretty text-sm leading-relaxed text-[#475569]">{p.desc}</p>
-                </div>
+                </ScrollFocusCard>
               ))}
             </div>
 

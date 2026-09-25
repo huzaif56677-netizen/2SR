@@ -36,17 +36,18 @@
 :root {
   color-scheme: light;
 
-  /* Theme matching 2SR Logo & Official Letterhead:
-     Soft light canvas, crisp elevated white cards, vibrant 2SR Royal Blue, deep corporate navy ink */
-  --background: #F2F5F9;
+  /* Theme matching 2SR Logo & Modern Corporate Design:
+     Clearly visible cool-slate light background #E8EDF5, pure elevated white cards #FFFFFF,
+     vibrant 2SR Royal Cobalt Blue #0052CC, deep navy ink #0A1128 */
+  --background: #E8EDF5;
   --foreground: #091124;
   --surface: #FFFFFF;
-  --surface-subtle: #E8EEF5;
+  --surface-subtle: #DEE6F0;
   --ink: #0A1128;
-  --muted: #E2E8F0;
+  --muted: #D5DFEC;
   --muted-foreground: #475569;
-  --border: #E2E8F0;
-  --border-strong: #CBD5E1;
+  --border: #CBD5E1;
+  --border-strong: #94A3B8;
 
   /* 2SR Signature Royal Cobalt & Cyan Accent */
   --accent: #0052CC;
@@ -125,19 +126,58 @@
   background: #94A3B8;
 }
 
-/* --- Smooth, gentle reveals (calm and refined, loading one by one smoothly) --- */
+/* --- High-End New-Gen Scroll Entrance --- */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 0 !important;
+  transform: translateY(32px) scale(0.98) !important;
   transition:
-    opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--reveal-delay, 0ms);
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-delay: var(--reveal-delay, 0ms) !important;
   will-change: opacity, transform;
 }
 .reveal.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* --- New-Gen Card Hover & Focus Animation --- */
+.newgen-card {
+  position: relative;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.newgen-card:hover,
+.newgen-card.is-focused {
+  transform: translateY(-6px) scale(1.015) !important;
+  box-shadow:
+    0 20px 40px -15px rgba(0, 82, 204, 0.16),
+    0 0 0 1.5px #0052CC !important;
+  border-color: #0052CC !important;
+  z-index: 10;
+}
+
+.newgen-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0052CC, #0080FF);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.newgen-card:hover::before,
+.newgen-card.is-focused::before {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Smooth curtain reveal for images */

@@ -1,14 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 import { services } from "@/lib/site-data"
-import { Reveal } from "./reveal"
+import { Reveal, ScrollFocusCard } from "./reveal"
 
 export function Capabilities() {
   return (
-    <section className="relative border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
+    <section className="relative border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col justify-between gap-6 border-b border-[#E2E8F0] pb-12 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between gap-6 border-b border-[#CBD5E1] pb-8 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <Reveal
               as="h2"
@@ -23,13 +23,13 @@ export function Capabilities() {
           </Reveal>
         </div>
 
-        {/* 3 Capabilities Grid - smoothly loads each option on scroll */}
-        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {/* 3 Capabilities Grid - smoothly loads each option one after another on scroll */}
+        <div className="mt-10 grid grid-cols-1 gap-7 md:grid-cols-3">
           {services.map((service, i) => (
-            <Reveal
+            <ScrollFocusCard
               key={service.index}
-              delay={i * 180}
-              className="group relative flex flex-col justify-between rounded-2xl border border-[#E2E8F0] bg-white p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
+              delay={i * 200}
+              className="group relative flex flex-col justify-between rounded-2xl border border-[#CBD5E1] bg-white p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] cursor-pointer"
             >
               <div>
                 {/* Image Header */}
@@ -82,7 +82,7 @@ export function Capabilities() {
                   <span className="text-sm">&rarr;</span>
                 </Link>
               </div>
-            </Reveal>
+            </ScrollFocusCard>
           ))}
         </div>
       </div>

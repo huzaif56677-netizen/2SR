@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
-import { Reveal } from "@/components/site/reveal"
+import { Reveal, ScrollFocusCard } from "@/components/site/reveal"
 import { milestones, visionMission } from "@/lib/site-data"
 
 export const metadata: Metadata = {
@@ -117,48 +117,49 @@ export default function AboutPage() {
         </section>
 
         {/* Vision, Mission & Goals */}
-        <section className="border-b border-[#E2E8F0] bg-[#F8FAFC] py-20 sm:py-28 lg:py-32">
+        {/* Vision, Mission & Goals */}
+        <section className="border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="text-center max-w-2xl mx-auto">
               <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
                 <span>Strategic Foundation</span>
               </Reveal>
-              <Reveal as="h2" delay={80} className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl mt-3">
+              <Reveal as="h2" delay={60} className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl mt-3">
                 Vision, Mission &amp; Purpose
               </Reveal>
             </div>
 
-            <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
-              <Reveal delay={100} className="rounded-2xl border border-[#E2E8F0] bg-white p-8 shadow-xs">
+            <div className="mt-10 grid grid-cols-1 gap-7 md:grid-cols-3">
+              <ScrollFocusCard delay={100} className="rounded-2xl border border-[#CBD5E1] bg-white p-8 shadow-xs cursor-pointer">
                 <span className="font-serif text-sm font-semibold text-[#0052CC]">01 &middot; Aspirational</span>
                 <h3 className="mt-3 font-serif text-2xl font-normal text-[#0A1128]">Our Vision</h3>
                 <p className="mt-4 text-pretty text-[15px] sm:text-base leading-relaxed text-[#475569]">
                   {visionMission.vision}
                 </p>
-              </Reveal>
+              </ScrollFocusCard>
 
-              <Reveal delay={200} className="rounded-2xl border border-[#E2E8F0] bg-white p-8 shadow-xs">
+              <ScrollFocusCard delay={220} className="rounded-2xl border border-[#CBD5E1] bg-white p-8 shadow-xs cursor-pointer">
                 <span className="font-serif text-sm font-semibold text-[#0052CC]">02 &middot; Impact-Driven</span>
                 <h3 className="mt-3 font-serif text-2xl font-normal text-[#0A1128]">Our Mission</h3>
                 <p className="mt-4 text-pretty text-[15px] sm:text-base leading-relaxed text-[#475569]">
                   {visionMission.mission}
                 </p>
-              </Reveal>
+              </ScrollFocusCard>
 
-              <Reveal delay={300} className="rounded-2xl border border-[#E2E8F0] bg-white p-8 shadow-xs">
+              <ScrollFocusCard delay={340} className="rounded-2xl border border-[#CBD5E1] bg-white p-8 shadow-xs cursor-pointer">
                 <span className="font-serif text-sm font-semibold text-[#0052CC]">03 &middot; Practical</span>
                 <h3 className="mt-3 font-serif text-2xl font-normal text-[#0A1128]">The Goals</h3>
                 <p className="mt-4 text-pretty text-[15px] sm:text-base leading-relaxed text-[#475569]">
                   {visionMission.goals}
                 </p>
-              </Reveal>
+              </ScrollFocusCard>
             </div>
           </div>
         </section>
 
         {/* Milestones Timeline */}
-        <section className="border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
+        <section className="border-b border-[#CBD5E1] bg-background py-14 sm:py-18 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
               <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">

@@ -15,29 +15,29 @@ export function Wordmark({
   size?: "sm" | "md" | "lg"
 }) {
   const dimensions = {
-    sm: { img: "h-7 w-9", font: "text-base", sub: "text-[0.58rem]" },
-    md: { img: "h-9 w-12", font: "text-lg", sub: "text-[0.62rem]" },
-    lg: { img: "h-12 w-16", font: "text-2xl", sub: "text-[0.72rem]" },
+    sm: { img: "h-8 w-11", font: "text-base sm:text-lg" },
+    md: { img: "h-11 w-15 sm:h-13 sm:w-18 lg:h-14 lg:w-20", font: "text-lg sm:text-xl lg:text-2xl" },
+    lg: { img: "h-14 w-20 sm:h-16 sm:w-24", font: "text-2xl sm:text-3xl" },
   }[size]
 
   return (
-    <div className={cn("inline-flex items-center gap-3 select-none", className)}>
+    <div className={cn("inline-flex items-center gap-2.5 sm:gap-3.5 select-none", className)}>
       <div className={cn("relative shrink-0 transition-transform duration-300 group-hover:scale-105", dimensions.img)}>
         <Image
           src="/images/logo.png"
           alt="2SR Innovations Logo"
           fill
           priority
-          sizes="64px"
+          sizes="(max-width: 640px) 60px, 90px"
           className="object-contain"
         />
       </div>
       {showText && (
-        <div className="flex flex-col justify-center leading-none">
-          <span className={cn("font-serif font-semibold tracking-tight text-foreground", dimensions.font)}>
+        <div className="flex items-center gap-1.5 whitespace-nowrap leading-none">
+          <span className={cn("font-serif font-bold tracking-tight text-[#0A1128]", dimensions.font)}>
             2SR
           </span>
-          <span className={cn("font-semibold uppercase tracking-[0.24em] text-muted-foreground mt-0.5", dimensions.sub)}>
+          <span className={cn("font-serif font-medium tracking-tight text-[#0052CC]", dimensions.font)}>
             Innovations
           </span>
         </div>

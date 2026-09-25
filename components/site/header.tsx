@@ -39,14 +39,14 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-[#E2E8F0] bg-white/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,82,204,0.04)]"
-          : "border-b border-[#E2E8F0]/40 bg-white/80 backdrop-blur-xs",
+          ? "border-b border-[#CBD5E1] bg-white/98 backdrop-blur-md shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
+          : "border-b border-[#CBD5E1] bg-white shadow-[0_2px_10px_rgba(0,0,0,0.04)]",
       )}
     >
       <div
         className={cn(
-          "mx-auto flex max-w-[1400px] items-center justify-between px-5 transition-all duration-300 sm:px-8 lg:px-12",
-          scrolled ? "h-16" : "h-20",
+          "mx-auto flex max-w-[1400px] items-center justify-between px-4 transition-all duration-300 sm:px-8 lg:px-12",
+          scrolled ? "h-16 sm:h-18" : "h-20 sm:h-22",
         )}
       >
         {/* Brand Logo */}

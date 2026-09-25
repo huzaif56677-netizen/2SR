@@ -3,13 +3,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
-import { Reveal } from "@/components/site/reveal"
+import { Reveal, ScrollFocusCard } from "@/components/site/reveal"
 import { industrySectors } from "@/lib/site-data"
 
 export const metadata: Metadata = {
   title: "Industries Served",
   description:
-    "Explore the industry sectors 2SR Innovations serves across Financial Markets, Technology, Engineering, Real Estate, Healthcare, and Hospitality.",
+    "Explore the industries 2SR Innovations serves across Financial Markets, Technology, Engineering, Real Estate, Healthcare, and Hospitality.",
 }
 
 export default function IndustriesPage() {
@@ -18,7 +18,7 @@ export default function IndustriesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#CBD5E1] bg-background py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -27,27 +27,27 @@ export default function IndustriesPage() {
 
             <Reveal
               as="h1"
-              delay={80}
+              delay={60}
               className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
             >
               Working across industries and specialized environments.
             </Reveal>
 
-            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl">
+            <Reveal as="p" delay={120} className="mt-5 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl">
               Every industry comes with distinct operational standards, compliance frameworks, and cultural dynamics. Our consultants and engineering teams bring contextual intelligence to every engagement.
             </Reveal>
           </div>
         </section>
 
         {/* Industries Architectural Grid */}
-        <section className="bg-background py-20 sm:py-28 lg:py-32">
+        <section className="bg-background py-14 sm:py-18 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
               {industrySectors.map((sector, i) => (
-                <Reveal
+                <ScrollFocusCard
                   key={sector.category}
-                  delay={(i % 3) * 140}
-                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
+                  delay={(i % 3) * 160}
+                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#CBD5E1] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.03)] cursor-pointer"
                 >
                   <div>
                     {/* Visual Banner */}
@@ -102,7 +102,7 @@ export default function IndustriesPage() {
                       <span className="text-sm">&rarr;</span>
                     </Link>
                   </div>
-                </Reveal>
+                </ScrollFocusCard>
               ))}
             </div>
 

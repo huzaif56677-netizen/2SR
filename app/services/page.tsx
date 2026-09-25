@@ -18,12 +18,8 @@ export default function ServicesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Header */}
-        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
-              <span>Full Scope of Capabilities</span>
-            </Reveal>
 
             <Reveal
               as="h1"
@@ -61,7 +57,7 @@ export default function ServicesPage() {
               <section
                 key={service.id}
                 id={service.id}
-                className="scroll-mt-24 py-20 sm:py-28 lg:py-32"
+                className="scroll-mt-24 py-14 sm:py-18 lg:py-20"
               >
                 <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
                   {/* Service Header Row */}
@@ -80,7 +76,7 @@ export default function ServicesPage() {
                       </div>
 
                       {/* Capabilities Checklist */}
-                      <div className="mt-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 shadow-xs">
+                      <div className="mt-8 rounded-2xl border border-[#CBD5E1] bg-white p-7 shadow-xs">
                         <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#64748B]">
                           Scope &amp; Deliverables
                         </h4>
@@ -128,7 +124,7 @@ export default function ServicesPage() {
                             {service.subServices.map((sub) => (
                               <div
                                 key={sub.title}
-                                className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-xs transition-colors hover:border-[#0052CC]/50"
+                                className="newgen-card rounded-xl border border-[#CBD5E1] bg-white p-5 shadow-xs cursor-pointer"
                               >
                                 <h5 className="font-serif text-lg font-normal text-[#0A1128]">
                                   {sub.title}

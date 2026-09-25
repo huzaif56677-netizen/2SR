@@ -16,7 +16,7 @@ export function Hero() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <section id="top" className="relative overflow-hidden bg-background pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+    <section id="top" className="relative overflow-hidden bg-background pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
       {/* Subtle 2SR Brand Watermark (directly echoing the official company letterhead) */}
       <div 
         className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.03] select-none"
@@ -151,7 +151,7 @@ export function Hero() {
               {/* Floating Case Study Card */}
               <div
                 className={cn(
-                  "reveal absolute -bottom-6 right-3 sm:-bottom-8 sm:right-6 max-w-[320px] sm:max-w-[360px] rounded-xl border border-[#E2E8F0] bg-white/95 p-3.5 shadow-[0_16px_36px_rgba(0,82,204,0.08)] backdrop-blur-md transition-all duration-300 hover:shadow-xl sm:p-4",
+                  "reveal newgen-card absolute -bottom-6 right-3 sm:-bottom-8 sm:right-6 max-w-[320px] sm:max-w-[360px] rounded-xl border border-[#CBD5E1] bg-white p-3.5 shadow-[0_16px_36px_rgba(0,82,204,0.08)] backdrop-blur-md sm:p-4 cursor-pointer",
                   mounted && "is-visible",
                 )}
                 style={{ "--reveal-delay": "950ms" } as React.CSSProperties}
