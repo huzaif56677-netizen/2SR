@@ -18,21 +18,22 @@ export default function ServicesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Header */}
-        <section className="border-b border-[#E2DFD5] bg-[#F8F6F0] py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <Reveal as="div" className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
-              Full Scope of Capabilities
+            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <span>Full Scope of Capabilities</span>
             </Reveal>
 
             <Reveal
               as="h1"
               delay={80}
-              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#111111]"
+              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
             >
               Three capabilities. One standard of excellence.
             </Reveal>
 
-            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#3B4048] sm:text-xl">
+            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl">
               2SR Innovations brings specialized domain expertise under a unified delivery framework. We eliminate the administrative burden and operational risk of managing multiple disconnected vendors.
             </Reveal>
 
@@ -42,7 +43,7 @@ export default function ServicesPage() {
                 <a
                   key={s.id}
                   href={`#${s.id}`}
-                  className="rounded-full border border-[#D5D1C6] bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#111111] transition-all duration-200 hover:bg-[#111111] hover:text-white cursor-pointer"
+                  className="rounded-full border border-[#CBD5E1] bg-[#F8FAFC] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#0A1128] transition-all duration-200 hover:border-[#0052CC] hover:bg-[#0052CC] hover:text-white cursor-pointer"
                 >
                   <span className="font-serif mr-2">{s.index}</span>
                   <span>{s.pillar} &middot; {s.kicker}</span>
@@ -53,7 +54,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Detailed Service Deep-Dives */}
-        <div className="divide-y divide-[#E2DFD5] bg-[#F8F6F0]">
+        <div className="divide-y divide-[#E2E8F0] bg-white">
           {services.map((service, index) => {
             const isEven = index % 2 === 0
             return (
@@ -67,7 +68,7 @@ export default function ServicesPage() {
                   <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-start">
                     {/* Visual & Checklist */}
                     <div className={isEven ? "lg:col-span-6 lg:order-1" : "lg:col-span-6 lg:order-2"}>
-                      <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl border border-[#E2DFD5] bg-[#EAE7DF] shadow-md">
+                      <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] shadow-md">
                         <Image
                           src={service.image}
                           alt={service.imageAlt}
@@ -76,20 +77,20 @@ export default function ServicesPage() {
                           sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
                         />
-                        <span className="absolute top-4 left-4 rounded-full bg-white/95 px-3.5 py-1 font-serif text-sm font-medium text-[#111111] shadow-xs backdrop-blur-xs">
+                        <span className="absolute top-4 left-4 rounded-full bg-white/95 px-3.5 py-1 font-serif text-sm font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
                           Pillar {service.index}
                         </span>
                       </div>
 
                       {/* Capabilities Checklist */}
-                      <div className="mt-8 rounded-2xl border border-[#E2DFD5] bg-white p-7 shadow-xs">
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#636875]">
+                      <div className="mt-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 shadow-xs">
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#64748B]">
                           Scope &amp; Deliverables
                         </h4>
                         <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                           {service.capabilities.map((cap) => (
-                            <li key={cap} className="flex items-center gap-2.5 text-sm text-[#374151]">
-                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#111111]" />
+                            <li key={cap} className="flex items-center gap-2.5 text-sm text-[#334155]">
+                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#0052CC]" />
                               <span>{cap}</span>
                             </li>
                           ))}
@@ -100,42 +101,42 @@ export default function ServicesPage() {
                     {/* Detailed Text & Sub-services */}
                     <div className={isEven ? "lg:col-span-6 lg:order-2" : "lg:col-span-6 lg:order-1"}>
                       <div className="flex items-baseline gap-3">
-                        <span className="font-serif text-3xl font-medium text-[#111111]">
+                        <span className="font-serif text-3xl font-medium text-[#0052CC]">
                           {service.index}
                         </span>
-                        <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
+                        <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#64748B]">
                           {service.pillar} &middot; {service.kicker}
                         </span>
                       </div>
 
-                      <h2 className="mt-4 font-serif text-[clamp(2.2rem,4.5vw,3.6rem)] font-normal leading-[1.08] text-[#111111]">
+                      <h2 className="mt-4 font-serif text-[clamp(2.2rem,4.5vw,3.6rem)] font-normal leading-[1.08] text-[#0A1128]">
                         {service.title}
                       </h2>
 
-                      <p className="mt-5 text-pretty text-lg font-normal leading-relaxed text-[#2A2D34] sm:text-xl">
+                      <p className="mt-5 text-pretty text-lg font-normal leading-relaxed text-[#1E293B] sm:text-xl">
                         {service.lead}
                       </p>
 
-                      <p className="mt-4 text-pretty text-base leading-relaxed text-[#4B515D]">
+                      <p className="mt-4 text-pretty text-base leading-relaxed text-[#475569]">
                         {service.body}
                       </p>
 
                       {/* Sub-services Cards */}
                       {service.subServices && (
                         <div className="mt-8 space-y-4">
-                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#636875]">
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#64748B]">
                             Core Delivery Models
                           </p>
                           <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
                             {service.subServices.map((sub) => (
                               <div
                                 key={sub.title}
-                                className="rounded-xl border border-[#E2DFD5] bg-white p-5 shadow-xs transition-colors hover:border-[#CBC6B9]"
+                                className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-xs transition-colors hover:border-[#0052CC]/50"
                               >
-                                <h5 className="font-serif text-lg font-normal text-[#111111]">
+                                <h5 className="font-serif text-lg font-normal text-[#0A1128]">
                                   {sub.title}
                                 </h5>
-                                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#4B515D]">
+                                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#475569]">
                                   {sub.desc}
                                 </p>
                               </div>
@@ -148,13 +149,13 @@ export default function ServicesPage() {
                       <div className="mt-10 flex flex-wrap items-center gap-4">
                         <Link
                           href="/contact"
-                          className="inline-flex items-center justify-center rounded-full bg-[#111111] px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#2A2A2A] cursor-pointer"
+                          className="inline-flex items-center justify-center rounded-full bg-[#0052CC] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#0043A8] hover:shadow-md cursor-pointer"
                         >
                           <span>Consult on {service.pillar}</span>
                         </Link>
                         <Link
                           href="/work"
-                          className="inline-flex items-center gap-2 text-sm font-semibold text-[#111111] hover:text-[#555555] transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0052CC] hover:text-[#0043A8] transition-colors cursor-pointer"
                         >
                           <span>View Case Studies &rarr;</span>
                         </Link>
@@ -168,18 +169,18 @@ export default function ServicesPage() {
         </div>
 
         {/* Global CTA Section */}
-        <section className="border-t border-[#E2DFD5] bg-[#EFECE4] py-20 sm:py-24">
+        <section className="border-t border-[#E2E8F0] bg-[#F8FAFC] py-20 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-5 text-center sm:px-8 lg:px-12">
-            <h3 className="font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+            <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
               Require a tailored engagement or multi-disciplinary package?
             </h3>
-            <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-[#4B515D]">
+            <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-[#475569]">
               Speak directly with our leadership team to configure a flexible arrangement combining talent acquisition, corporate gifting, or infrastructure maintenance.
             </p>
             <div className="mt-8 flex justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#111111] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#2A2A2A] cursor-pointer"
+                className="inline-flex items-center justify-center rounded-full bg-[#0052CC] px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-[#0052CC]/15 transition-all hover:bg-[#0043A8] hover:shadow-lg cursor-pointer"
               >
                 <span>Schedule a Consultation</span>
               </Link>

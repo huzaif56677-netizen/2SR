@@ -39,8 +39,8 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-[#E2DFD5]/90 bg-[#F8F6F0]/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
-          : "border-b border-transparent bg-[#F8F6F0]/80 backdrop-blur-xs",
+          ? "border-b border-[#E2E8F0] bg-white/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,82,204,0.04)]"
+          : "border-b border-[#E2E8F0]/40 bg-white/80 backdrop-blur-xs",
       )}
     >
       <div
@@ -69,13 +69,13 @@ export function Header() {
                 className={cn(
                   "relative py-1 text-[15px] font-medium transition-colors cursor-pointer",
                   isActive
-                    ? "text-[#111111] font-semibold"
-                    : "text-[#4B515D] hover:text-[#111111]",
+                    ? "text-[#0052CC] font-semibold"
+                    : "text-[#475569] hover:text-[#0052CC]",
                 )}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full bg-[#111111]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-[#0052CC]" />
                 )}
               </Link>
             )
@@ -86,7 +86,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden items-center justify-center rounded-full bg-[#111111] px-6 py-2.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#2A2A2A] hover:shadow-sm cursor-pointer sm:inline-flex"
+            className="hidden items-center justify-center rounded-full bg-[#0052CC] px-6 py-2.5 text-[14px] font-medium text-white shadow-xs transition-all duration-200 hover:bg-[#0043A8] hover:shadow-md cursor-pointer sm:inline-flex"
           >
             <span>Let&apos;s Talk</span>
           </Link>
@@ -95,7 +95,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-[#D5D1C6] text-[#111111] transition-colors hover:border-[#111111] cursor-pointer lg:hidden"
+            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-[#CBD5E1] text-[#0A1128] transition-colors hover:border-[#0052CC] hover:text-[#0052CC] cursor-pointer lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
@@ -124,17 +124,17 @@ export function Header() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 flex flex-col justify-between bg-[#F8F6F0] px-6 pt-24 pb-8 transition-all duration-300 lg:hidden",
+          "fixed inset-0 z-40 flex flex-col justify-between bg-white px-6 pt-24 pb-8 transition-all duration-300 lg:hidden",
           open
             ? "pointer-events-auto opacity-100 translate-y-0"
             : "pointer-events-none opacity-0 -translate-y-4",
         )}
       >
         <div className="flex flex-col">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#717682]">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#64748B]">
             Navigation
           </p>
-          <nav className="flex flex-col divide-y divide-[#E2DFD5]" aria-label="Mobile Navigation">
+          <nav className="flex flex-col divide-y divide-[#E2E8F0]" aria-label="Mobile Navigation">
             {nav.map((item) => {
               const isActive = pathname === item.href
               return (
@@ -144,26 +144,26 @@ export function Header() {
                   onClick={() => setOpen(false)}
                   className={cn(
                     "flex items-center justify-between py-4 font-serif text-2xl transition-colors cursor-pointer",
-                    isActive ? "text-[#111111] font-medium" : "text-[#333333] hover:text-[#111111]",
+                    isActive ? "text-[#0052CC] font-medium" : "text-[#0A1128] hover:text-[#0052CC]",
                   )}
                 >
                   <span>{item.label}</span>
-                  <span className="text-base text-[#717682]">&rarr;</span>
+                  <span className="text-base text-[#64748B]">&rarr;</span>
                 </Link>
               )
             })}
           </nav>
         </div>
 
-        <div className="border-t border-[#E2DFD5] pt-6">
+        <div className="border-t border-[#E2E8F0] pt-6">
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="flex w-full items-center justify-center rounded-full bg-[#111111] py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-[#2A2A2A] cursor-pointer"
+            className="flex w-full items-center justify-center rounded-full bg-[#0052CC] py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-[#0043A8] cursor-pointer"
           >
             <span>Let&apos;s Talk</span>
           </Link>
-          <p className="mt-4 text-center text-xs text-[#717682]">
+          <p className="mt-4 text-center text-xs text-[#64748B]">
             2SR Innovations &middot; People. Experiences. Infrastructure.
           </p>
         </div>

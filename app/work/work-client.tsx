@@ -17,10 +17,10 @@ export function WorkClient() {
       : projects.filter((p) => p.pillar.toLowerCase() === activeCategory.toLowerCase())
 
   return (
-    <div className="bg-[#F8F6F0] py-16 sm:py-20 lg:py-24">
+    <div className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Filter Navigation Tabs */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E2DFD5] pb-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E2E8F0] pb-6">
           <div className="flex flex-wrap items-center gap-2.5">
             {categories.map((cat) => (
               <button
@@ -30,8 +30,8 @@ export function WorkClient() {
                 className={cn(
                   "rounded-full border px-5 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer",
                   activeCategory === cat
-                    ? "border-[#111111] bg-[#111111] text-white shadow-xs"
-                    : "border-[#E2DFD5] bg-white text-[#4B515D] hover:border-[#111111] hover:text-[#111111]",
+                    ? "border-[#0052CC] bg-[#0052CC] text-white shadow-xs"
+                    : "border-[#CBD5E1] bg-white text-[#334155] hover:border-[#0052CC] hover:text-[#0052CC]",
                 )}
               >
                 {cat === "All" ? "All Engagements" : cat}
@@ -39,8 +39,8 @@ export function WorkClient() {
             ))}
           </div>
 
-          <p className="text-sm text-[#4B515D]">
-            Showing <strong className="text-[#111111]">{filteredProjects.length}</strong> verified engagements
+          <p className="text-sm text-[#475569]">
+            Showing <strong className="text-[#0A1128]">{filteredProjects.length}</strong> verified engagements
           </p>
         </div>
 
@@ -49,10 +49,10 @@ export function WorkClient() {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              className="group grid grid-cols-1 items-center gap-8 rounded-2xl border border-[#E2DFD5] bg-white p-7 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#CBC6B9] hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] lg:grid-cols-12 lg:gap-12"
+              className="group grid grid-cols-1 items-center gap-8 rounded-2xl border border-[#E2E8F0] bg-white p-7 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)] lg:grid-cols-12 lg:gap-12"
             >
               {/* Project Image */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#EAE7DF] bg-[#F1EFE8] lg:col-span-5">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] lg:col-span-5">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -60,7 +60,7 @@ export function WorkClient() {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-103"
                 />
-                <div className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 font-serif text-xs font-medium text-[#111111] shadow-xs backdrop-blur-xs">
+                <div className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 font-serif text-xs font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
                   {project.category}
                 </div>
               </div>
@@ -69,31 +69,31 @@ export function WorkClient() {
               <div className="flex flex-col justify-between lg:col-span-7">
                 <div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="font-serif text-sm font-semibold text-[#111111]">
+                    <span className="font-serif text-sm font-semibold text-[#0052CC]">
                       {project.id}
                     </span>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#636875]">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#64748B]">
                       {project.clientType}
                     </span>
                   </div>
 
-                  <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-normal text-[#111111] group-hover:text-black">
+                  <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-normal text-[#0A1128] group-hover:text-[#0052CC] transition-colors">
                     {project.title}
                   </h2>
 
-                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#4B515D]">
+                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#475569]">
                     {project.description}
                   </p>
 
                   {/* Scope bullets */}
-                  <div className="mt-6 border-t border-[#EAE7DF] pt-5">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#636875] mb-2.5">
+                  <div className="mt-6 border-t border-[#F1F5F9] pt-5">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#64748B] mb-2.5">
                       Key Deliverables:
                     </p>
-                    <ul className="grid grid-cols-1 gap-2.5 text-sm text-[#374151] sm:grid-cols-2">
+                    <ul className="grid grid-cols-1 gap-2.5 text-sm text-[#334155] sm:grid-cols-2">
                       {project.scope.map((s) => (
                         <li key={s} className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#111111]" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
                           <span>{s}</span>
                         </li>
                       ))}
@@ -102,19 +102,19 @@ export function WorkClient() {
                 </div>
 
                 {/* Key Metric & Link */}
-                <div className="mt-8 flex flex-wrap items-end justify-between gap-4 border-t border-[#EAE7DF] pt-5">
+                <div className="mt-8 flex flex-wrap items-end justify-between gap-4 border-t border-[#F1F5F9] pt-5">
                   <div>
-                    <span className="font-serif text-4xl font-normal text-[#111111]">
+                    <span className="font-serif text-4xl font-normal text-[#0052CC]">
                       {project.metric}
                     </span>
-                    <span className="ml-2 text-sm text-[#636875]">
+                    <span className="ml-2 text-sm text-[#64748B]">
                       {project.metricLabel}
                     </span>
                   </div>
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#111111] px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-[#2A2A2A] cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#0052CC] px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all hover:bg-[#0043A8] cursor-pointer"
                   >
                     <span>Discuss Requirement</span>
                     <span className="text-sm">&rarr;</span>
@@ -126,19 +126,19 @@ export function WorkClient() {
         </div>
 
         {/* Aggregate Metrics Bar */}
-        <div className="mt-20 rounded-2xl border border-[#E2DFD5] bg-white p-8 sm:p-12 shadow-xs">
+        <div className="mt-20 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-8 sm:p-12 shadow-xs">
           <div className="grid grid-cols-1 gap-8 text-center sm:grid-cols-3">
             <div>
-              <p className="font-serif text-4xl font-normal text-[#111111]">500+</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#636875]">Professionals Placed</p>
+              <p className="font-serif text-4xl font-normal text-[#0052CC]">500+</p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#64748B]">Professionals Placed</p>
             </div>
             <div>
-              <p className="font-serif text-4xl font-normal text-[#111111]">10,000+</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#636875]">Corporate Gifts Delivered</p>
+              <p className="font-serif text-4xl font-normal text-[#0052CC]">10,000+</p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#64748B]">Corporate Gifts Delivered</p>
             </div>
             <div>
-              <p className="font-serif text-4xl font-normal text-[#111111]">100%</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#636875]">On-Time Project Handover</p>
+              <p className="font-serif text-4xl font-normal text-[#0052CC]">100%</p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#64748B]">On-Time Project Handover</p>
             </div>
           </div>
         </div>

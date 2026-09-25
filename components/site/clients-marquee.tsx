@@ -4,9 +4,9 @@ export function ClientsMarquee() {
   const marqueeItems = [...clients, ...clients, ...clients]
 
   return (
-    <div aria-label="Sectors and clients we serve" className="border-y border-[#E2DFD5] bg-[#F1EEE7] py-7 sm:py-9">
+    <div aria-label="Sectors and clients we serve" className="border-y border-[#E2E8F0] bg-[#F8FAFC] py-7 sm:py-9">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.22em] text-[#636875]">
+        <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.22em] text-[#64748B]">
           Trusted Partner Across Engineering &middot; Technology &middot; BFSI &middot; Corporate Infrastructure
         </p>
 
@@ -25,10 +25,10 @@ export function ClientsMarquee() {
                 key={`${name}-${i}`}
                 className="mx-8 flex items-center gap-8 shrink-0 sm:mx-12"
               >
-                <span className="font-serif text-xl tracking-normal text-[#2A2D34] transition-colors hover:text-[#111111] cursor-default sm:text-2xl">
+                <span className="font-serif text-xl tracking-normal text-[#1E293B] transition-colors hover:text-[#0052CC] cursor-default sm:text-2xl">
                   {name}
                 </span>
-                <span className="h-1.5 w-1.5 rounded-full bg-[#B8B3A6]" aria-hidden="true" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]/30" aria-hidden="true" />
               </div>
             ))}
           </div>

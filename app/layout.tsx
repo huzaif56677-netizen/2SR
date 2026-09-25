@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: "light",
-  themeColor: "#F8F6F0",
+  themeColor: "#0052CC",
 }
 
 export default function RootLayout({
@@ -71,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSerif.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-background text-foreground antialiased selection:bg-foreground selection:text-background">
+      <body className="min-h-screen bg-background text-foreground antialiased selection:bg-[#0052CC] selection:text-white">
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>

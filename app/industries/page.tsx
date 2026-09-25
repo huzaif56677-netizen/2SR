@@ -18,39 +18,40 @@ export default function IndustriesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2DFD5] bg-[#F8F6F0] py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <Reveal as="div" className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
-              Sectors &amp; Environments
+            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <span>Sectors &amp; Environments</span>
             </Reveal>
 
             <Reveal
               as="h1"
               delay={80}
-              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#111111]"
+              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
             >
               Working across industries and specialized environments.
             </Reveal>
 
-            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#3B4048] sm:text-xl">
+            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl">
               Every industry comes with distinct operational standards, compliance frameworks, and cultural dynamics. Our consultants and engineering teams bring contextual intelligence to every engagement.
             </Reveal>
           </div>
         </section>
 
         {/* Sectors Architectural Grid */}
-        <section className="bg-[#F8F6F0] py-20 sm:py-28 lg:py-32">
+        <section className="bg-white py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {industrySectors.map((sector, i) => (
                 <Reveal
                   key={sector.category}
                   delay={i * 90}
-                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2DFD5] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#CBC6B9] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
                 >
                   <div>
                     {/* Visual Banner */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F1EFE8]">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F1F5F9]">
                       <Image
                         src={sector.image}
                         alt={sector.category}
@@ -58,33 +59,33 @@ export default function IndustriesPage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-103"
                       />
-                      <span className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 font-serif text-xs font-medium text-[#111111] shadow-xs backdrop-blur-xs">
+                      <span className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 font-serif text-xs font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
                         Sector 0{i + 1}
                       </span>
                     </div>
 
                     {/* Sector Content */}
                     <div className="p-7 sm:p-8">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#636875]">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#64748B]">
                         {sector.tagline}
                       </p>
-                      <h3 className="mt-2.5 font-serif text-2xl sm:text-3xl font-normal text-[#111111] group-hover:text-black">
+                      <h3 className="mt-2.5 font-serif text-2xl sm:text-3xl font-normal text-[#0A1128] group-hover:text-[#0052CC] transition-colors">
                         {sector.category}
                       </h3>
-                      <p className="mt-3.5 text-pretty text-sm sm:text-base leading-relaxed text-[#4B515D]">
+                      <p className="mt-3.5 text-pretty text-sm sm:text-base leading-relaxed text-[#475569]">
                         {sector.description}
                       </p>
 
                       {/* Sub-sectors chips */}
-                      <div className="mt-6 border-t border-[#EAE7DF] pt-5">
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-[#636875] mb-3">
+                      <div className="mt-6 border-t border-[#F1F5F9] pt-5">
+                        <p className="text-[11px] font-semibold uppercase tracking-wider text-[#64748B] mb-3">
                           Domain Verticals:
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {sector.subsectors.map((sub) => (
                             <span
                               key={sub}
-                              className="rounded-full border border-[#E2DFD5] bg-[#FAF8F5] px-3 py-1 text-xs font-medium text-[#374151]"
+                              className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-1 text-xs font-medium text-[#334155]"
                             >
                               {sub}
                             </span>
@@ -98,7 +99,7 @@ export default function IndustriesPage() {
                   <div className="p-7 sm:p-8 pt-0">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#111111] transition-transform duration-200 group-hover:translate-x-1 cursor-pointer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0052CC] transition-transform duration-200 group-hover:translate-x-1 cursor-pointer"
                     >
                       <span>Inquire for {sector.category}</span>
                       <span className="text-sm">&rarr;</span>
@@ -109,17 +110,17 @@ export default function IndustriesPage() {
             </div>
 
             {/* Bottom Callout */}
-            <div className="mt-20 border-t border-[#E2DFD5] pt-16 text-center">
-              <h3 className="font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+            <div className="mt-20 border-t border-[#E2E8F0] pt-16 text-center">
+              <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                 Operating in a specialized or niche industry?
               </h3>
-              <p className="mx-auto mt-4 max-w-xl text-pretty text-base text-[#4B515D]">
+              <p className="mx-auto mt-4 max-w-xl text-pretty text-base text-[#475569]">
                 Our team routinely handles bespoke recruitment mandates and customized physical MEP projects tailored to proprietary specifications.
               </p>
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#111111] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#2A2A2A] cursor-pointer"
+                  className="inline-flex items-center justify-center rounded-full bg-[#0052CC] px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-[#0052CC]/15 transition-all hover:bg-[#0043A8] hover:shadow-lg cursor-pointer"
                 >
                   <span>Discuss Your Sector Needs</span>
                 </Link>

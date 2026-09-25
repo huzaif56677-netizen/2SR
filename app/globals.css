@@ -36,34 +36,35 @@
 :root {
   color-scheme: light;
 
-  /* Reference website palette: warm editorial cream / ivory */
-  --background: #F8F6F0;
-  --foreground: #111215;
-  --surface: #FFFFFF;
-  --surface-subtle: #F1EFE8;
-  --ink: #111111;
-  --muted: #EBE8DF;
-  --muted-foreground: #4B515D;
-  --border: #E3DFD5;
-  --border-strong: #CBC6B9;
+  /* Theme matching 2SR Logo & Official Letterhead:
+     Luminous clean canvas, vibrant 2SR Royal Blue, deep corporate navy ink, and cool silver slate */
+  --background: #FFFFFF;
+  --foreground: #091124;
+  --surface: #F8FAFC;
+  --surface-subtle: #F1F5F9;
+  --ink: #0A1128;
+  --muted: #EDF2F7;
+  --muted-foreground: #475569;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
 
-  /* Restrained neutral black accent — no blue */
-  --accent: #111111;
-  --accent-hover: #262626;
+  /* 2SR Signature Royal Cobalt & Cyan Accent */
+  --accent: #0052CC;
+  --accent-hover: #0043A8;
   --accent-foreground: #FFFFFF;
 
   --card: #FFFFFF;
-  --card-foreground: #111215;
+  --card-foreground: #091124;
   --popover: #FFFFFF;
-  --popover-foreground: #111215;
+  --popover-foreground: #091124;
 
-  --primary: #111111;
+  --primary: #0052CC;
   --primary-foreground: #FFFFFF;
-  --secondary: #E5E2D9;
-  --secondary-foreground: #111215;
+  --secondary: #EBF3FC;
+  --secondary-foreground: #0052CC;
   --destructive: #DC2626;
-  --input: #E2DFD5;
-  --ring: #111111;
+  --input: #E2E8F0;
+  --ring: #0052CC;
   --radius: 0.5rem;
 }
 
@@ -88,7 +89,7 @@
     letter-spacing: -0.012em;
   }
   ::selection {
-    background: #111111;
+    background: #0052CC;
     color: #FFFFFF;
   }
 }
@@ -108,20 +109,20 @@
   }
 }
 
-/* Subtle, high-end warm scrollbar */
+/* Subtle, high-end clean scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F6F0;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8D4C8;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #BCB7AA;
+  background: #94A3B8;
 }
 
 /* --- Smooth, gentle reveals (calm and refined, not rushed) --- */

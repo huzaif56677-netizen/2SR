@@ -41,44 +41,45 @@ export default function ApproachPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2DFD5] bg-[#F8F6F0] py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <Reveal as="div" className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
-              How We Work
+            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <span>How We Work</span>
             </Reveal>
 
             <Reveal
               as="h1"
               delay={80}
-              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#111111]"
+              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
             >
               A calm, structured approach to every requirement.
             </Reveal>
 
-            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#3B4048] sm:text-xl">
+            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl">
               We replace guesswork and fragmented coordination with a disciplined, five-stage delivery framework. Whether filling key executive positions, producing corporate gift collections, or engineering MEP systems, the methodology remains rock-solid.
             </Reveal>
           </div>
         </section>
 
         {/* 5 Stages Detail */}
-        <section className="border-b border-[#E2DFD5] bg-[#F8F6F0] py-20 sm:py-28 lg:py-32">
+        <section className="border-b border-[#E2E8F0] bg-white py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
               {/* Sticky Sidebar on Desktop */}
               <div className="lg:col-span-4">
                 <div className="lg:sticky lg:top-28">
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#636875]">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#64748B]">
                     The 5-Stage Framework
                   </span>
-                  <h2 className="mt-3 font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+                  <h2 className="mt-3 font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                     Predictable outcomes through disciplined steps.
                   </h2>
-                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#4B515D]">
+                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#475569]">
                     By standardizing discovery, planning, execution, verification, and support, we ensure every stakeholder experiences clarity at every juncture.
                   </p>
 
-                  <div className="mt-8 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#E2DFD5] bg-[#EAE7DF] shadow-md">
+                  <div className="mt-8 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] shadow-md">
                     <Image
                       src="/images/collaboration.png"
                       alt="Team executing a structured corporate engagement"
@@ -91,20 +92,20 @@ export default function ApproachPage() {
               </div>
 
               {/* Sequential Steps */}
-              <div className="lg:col-span-8 divide-y divide-[#E2DFD5]">
+              <div className="lg:col-span-8 divide-y divide-[#E2E8F0]">
                 {approach.map((item) => (
                   <Reveal key={item.step} className="grid grid-cols-1 gap-6 py-10 sm:grid-cols-12 sm:gap-8">
                     <div className="sm:col-span-2">
-                      <span className="font-serif text-4xl font-medium text-[#111111]">{item.step}</span>
+                      <span className="font-serif text-4xl font-medium text-[#0052CC]">{item.step}</span>
                     </div>
                     <div className="sm:col-span-10">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#636875]">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#64748B]">
                         {item.lead}
                       </span>
-                      <h3 className="mt-1 font-serif text-2xl font-normal text-[#111111] sm:text-3xl">
+                      <h3 className="mt-1 font-serif text-2xl font-normal text-[#0A1128] sm:text-3xl">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-pretty text-base leading-relaxed text-[#4B515D]">
+                      <p className="mt-3 text-pretty text-base leading-relaxed text-[#475569]">
                         {item.text}
                       </p>
                     </div>
@@ -116,13 +117,13 @@ export default function ApproachPage() {
         </section>
 
         {/* Quality Assurance Pillars */}
-        <section className="bg-[#F1EFE8] py-20 sm:py-28 lg:py-32">
+        <section className="bg-[#F8FAFC] py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
-              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
+              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0052CC]">
                 Governance &amp; Assurance
               </span>
-              <h2 className="mt-2 font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+              <h2 className="mt-2 font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                 The principles governing our delivery.
               </h2>
             </div>
@@ -131,26 +132,26 @@ export default function ApproachPage() {
               {executionPillars.map((p) => (
                 <div
                   key={p.num}
-                  className="rounded-2xl border border-[#E2DFD5] bg-white p-7 shadow-xs transition-colors hover:border-[#CBC6B9]"
+                  className="rounded-2xl border border-[#E2E8F0] bg-white p-7 shadow-xs transition-colors hover:border-[#0052CC]/50"
                 >
-                  <span className="font-serif text-sm font-semibold text-[#111111]">{p.num}</span>
-                  <h4 className="mt-3 font-serif text-xl font-normal text-[#111111]">{p.title}</h4>
-                  <p className="mt-3 text-pretty text-sm leading-relaxed text-[#4B515D]">{p.desc}</p>
+                  <span className="font-serif text-sm font-semibold text-[#0052CC]">{p.num}</span>
+                  <h4 className="mt-3 font-serif text-xl font-normal text-[#0A1128]">{p.title}</h4>
+                  <p className="mt-3 text-pretty text-sm leading-relaxed text-[#475569]">{p.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16 rounded-2xl border border-[#E2DFD5] bg-white p-8 text-center sm:p-12 shadow-xs">
-              <h3 className="font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+            <div className="mt-16 rounded-2xl border border-[#E2E8F0] bg-white p-8 text-center sm:p-12 shadow-sm">
+              <h3 className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl">
                 Experience the 2SR difference on your next project.
               </h3>
-              <p className="mx-auto mt-3 max-w-lg text-pretty text-base text-[#4B515D]">
+              <p className="mx-auto mt-3 max-w-lg text-pretty text-base text-[#475569]">
                 Let us structure an actionable scope with realistic timelines and dedicated resources.
               </p>
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#111111] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#2A2A2A] cursor-pointer"
+                  className="inline-flex items-center justify-center rounded-full bg-[#0052CC] px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-[#0052CC]/15 transition-all hover:bg-[#0043A8] hover:shadow-lg cursor-pointer"
                 >
                   <span>Initiate a Conversation</span>
                 </Link>

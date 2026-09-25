@@ -39,22 +39,23 @@ const discoverySections = [
 
 export function HomeDiscovery() {
   return (
-    <section className="relative border-b border-[#E2DFD5] bg-[#F8F6F0] py-20 sm:py-28 lg:py-32">
+    <section className="relative border-b border-[#E2E8F0] bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        <div className="flex flex-col justify-between gap-6 border-b border-[#E2DFD5] pb-12 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between gap-6 border-b border-[#E2E8F0] pb-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <Reveal as="div" className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
-              Explore Further
+            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <span>Explore Further</span>
             </Reveal>
             <Reveal
               as="h2"
               delay={80}
-              className="text-balance font-serif text-[clamp(2.4rem,5vw,4.2rem)] font-normal leading-[1.04] tracking-tight text-[#111111]"
+              className="text-balance font-serif text-[clamp(2.4rem,5vw,4.2rem)] font-normal leading-[1.04] tracking-tight text-[#0A1128]"
             >
               Discover the organization behind the results.
             </Reveal>
           </div>
-          <Reveal as="p" delay={140} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#3B4048] sm:text-lg">
+          <Reveal as="p" delay={140} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#334155] sm:text-lg">
             Explore our company history, disciplined delivery framework, cross-industry expertise, and past engagements.
           </Reveal>
         </div>
@@ -64,10 +65,10 @@ export function HomeDiscovery() {
             <Reveal
               key={item.title}
               delay={i * 100}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2DFD5] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:border-[#CBC6B9] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
             >
               <div>
-                <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#F1EFE8]">
+                <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#F1F5F9]">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -75,19 +76,19 @@ export function HomeDiscovery() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-103"
                   />
-                  <span className="absolute top-3 right-3 rounded-full bg-white/95 px-2.5 py-0.5 text-xs font-medium text-[#111111] shadow-xs backdrop-blur-xs">
+                  <span className="absolute top-3 right-3 rounded-full bg-white/95 px-2.5 py-0.5 text-xs font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
                     {item.stat}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-[#636875]">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#64748B]">
                     {item.tagline}
                   </p>
-                  <h3 className="mt-2 font-serif text-xl sm:text-2xl font-normal text-[#111111] group-hover:text-black">
+                  <h3 className="mt-2 font-serif text-xl sm:text-2xl font-normal text-[#0A1128] group-hover:text-[#0052CC] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-pretty text-sm leading-relaxed text-[#4B515D]">
+                  <p className="mt-3 text-pretty text-sm leading-relaxed text-[#475569]">
                     {item.description}
                   </p>
                 </div>
@@ -96,7 +97,7 @@ export function HomeDiscovery() {
               <div className="p-6 pt-0">
                 <Link
                   href={item.href}
-                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#111111] transition-transform duration-200 group-hover:translate-x-1 cursor-pointer"
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0052CC] transition-transform duration-200 group-hover:translate-x-1 cursor-pointer"
                 >
                   <span>Explore {item.title}</span>
                   <span className="text-sm">&rarr;</span>
