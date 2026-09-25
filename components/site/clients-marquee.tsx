@@ -4,7 +4,7 @@ export function ClientsMarquee() {
   const marqueeItems = [...clients, ...clients, ...clients]
 
   return (
-    <div aria-label="Sectors and clients we serve" className="border-y border-[#E2E8F0] bg-[#F8FAFC] py-7 sm:py-9">
+    <div aria-label="Industries and clients we serve" className="border-y border-[#E2E8F0] bg-background/80 py-7 sm:py-9">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.22em] text-[#64748B]">
           Trusted Partner Across Engineering &middot; Technology &middot; BFSI &middot; Corporate Infrastructure

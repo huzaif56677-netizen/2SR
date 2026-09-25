@@ -17,7 +17,7 @@ export default function ContactPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Contact Page Header */}
-        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -42,7 +42,7 @@ export default function ContactPage() {
         <ContactSection id="contact-form" isStandalonePage={true} />
 
         {/* FAQ Section */}
-        <section className="border-b border-[#E2E8F0] bg-[#F8FAFC] py-20 sm:py-28 lg:py-32">
+        <section className="border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
               <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0052CC]">

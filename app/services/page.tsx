@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Header */}
-        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -43,7 +43,7 @@ export default function ServicesPage() {
                 <a
                   key={s.id}
                   href={`#${s.id}`}
-                  className="rounded-full border border-[#CBD5E1] bg-[#F8FAFC] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#0A1128] transition-all duration-200 hover:border-[#0052CC] hover:bg-[#0052CC] hover:text-white cursor-pointer"
+                  className="rounded-full border border-[#CBD5E1] bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#0A1128] shadow-xs transition-all duration-200 hover:border-[#0052CC] hover:bg-[#0052CC] hover:text-white cursor-pointer"
                 >
                   <span className="font-serif mr-2">{s.index}</span>
                   <span>{s.pillar} &middot; {s.kicker}</span>
@@ -54,7 +54,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Detailed Service Deep-Dives */}
-        <div className="divide-y divide-[#E2E8F0] bg-white">
+        <div className="divide-y divide-[#E2E8F0] bg-background">
           {services.map((service, index) => {
             const isEven = index % 2 === 0
             return (
@@ -77,9 +77,6 @@ export default function ServicesPage() {
                           sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
                         />
-                        <span className="absolute top-4 left-4 rounded-full bg-white/95 px-3.5 py-1 font-serif text-sm font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
-                          Pillar {service.index}
-                        </span>
                       </div>
 
                       {/* Capabilities Checklist */}

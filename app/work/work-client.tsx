@@ -17,7 +17,7 @@ export function WorkClient() {
       : projects.filter((p) => p.pillar.toLowerCase() === activeCategory.toLowerCase())
 
   return (
-    <div className="bg-white py-16 sm:py-20 lg:py-24">
+    <div className="bg-background py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Filter Navigation Tabs */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E2E8F0] pb-6">

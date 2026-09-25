@@ -3,7 +3,7 @@ import { Reveal } from "./reveal"
 
 export function Why() {
   return (
-    <section className="relative border-b border-[#E2E8F0] bg-[#F8FAFC] py-20 sm:py-28 lg:py-32">
+    <section className="relative border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Heading & Premise */}
@@ -32,7 +32,7 @@ export function Why() {
               {differentiators.map((item, i) => (
                 <Reveal
                   key={item.number}
-                  delay={i * 90}
+                  delay={i * 140}
                   className="group flex flex-col justify-between rounded-xl border border-[#E2E8F0] bg-white p-7 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.02)] transition-all duration-300 hover:border-[#0052CC]/40 hover:shadow-[0_8px_28px_rgba(0,82,204,0.06)]"
                 >
                   <div>

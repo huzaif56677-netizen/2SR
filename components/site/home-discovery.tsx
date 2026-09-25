@@ -22,10 +22,10 @@ const discoverySections = [
   {
     title: "Industries Served",
     tagline: "Deep Domain Coverage",
-    description: "From Financial Markets and IT to Real Estate, Heavy Industry, and Healthcare, discover our sector-specific capabilities.",
+    description: "From Financial Markets and IT to Real Estate, Heavy Industry, and Healthcare, discover our industry-specific capabilities.",
     href: "/industries",
     image: "/images/work-corporate.png",
-    stat: "6 Sectors",
+    stat: "6 Domains",
   },
   {
     title: "Selected Work",
@@ -39,7 +39,7 @@ const discoverySections = [
 
 export function HomeDiscovery() {
   return (
-    <section className="relative border-b border-[#E2E8F0] bg-white py-20 sm:py-28 lg:py-32">
+    <section className="relative border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col justify-between gap-6 border-b border-[#E2E8F0] pb-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">

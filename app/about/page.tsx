@@ -37,7 +37,7 @@ export default function AboutPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </section>
 
         {/* Narrative & Visual Split */}
-        <section className="border-b border-[#E2E8F0] bg-white py-20 sm:py-28 lg:py-32">
+        <section className="border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
               {/* Left narrative */}
@@ -158,7 +158,7 @@ export default function AboutPage() {
         </section>
 
         {/* Milestones Timeline */}
-        <section className="border-b border-[#E2E8F0] bg-white py-20 sm:py-28 lg:py-32">
+        <section className="border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
               <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">

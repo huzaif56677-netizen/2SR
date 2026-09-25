@@ -5,34 +5,30 @@ import { Reveal } from "./reveal"
 
 export function Capabilities() {
   return (
-    <section className="relative border-b border-[#E2E8F0] bg-white py-20 sm:py-28 lg:py-32">
+    <section className="relative border-b border-[#E2E8F0] bg-background py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="flex flex-col justify-between gap-6 border-b border-[#E2E8F0] pb-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
-              <span>Integrated Capabilities</span>
-            </Reveal>
             <Reveal
               as="h2"
-              delay={80}
+              delay={40}
               className="text-balance font-serif text-[clamp(2.4rem,5vw,4.2rem)] font-normal leading-[1.04] tracking-tight text-[#0A1128]"
             >
               Different needs. One accountable partner.
             </Reveal>
           </div>
-          <Reveal as="p" delay={140} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#334155] sm:text-lg">
+          <Reveal as="p" delay={120} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#334155] sm:text-lg">
             We bridge the gap between human talent, corporate relationship culture, and physical facility engineering — eliminating the friction of managing disconnected vendors.
           </Reveal>
         </div>
 
-        {/* 3 Pillars Grid */}
+        {/* 3 Capabilities Grid - smoothly loads each option on scroll */}
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
           {services.map((service, i) => (
             <Reveal
               key={service.index}
-              delay={i * 120}
+              delay={i * 180}
               className="group relative flex flex-col justify-between rounded-2xl border border-[#E2E8F0] bg-white p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
             >
               <div>
@@ -45,9 +41,6 @@ export function Capabilities() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-103"
                   />
-                  <span className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 font-serif text-xs font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
-                    Pillar {service.index}
-                  </span>
                 </div>
 
                 {/* Subtitle & Title */}

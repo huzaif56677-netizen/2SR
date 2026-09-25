@@ -18,11 +18,11 @@ export default function IndustriesPage() {
       <Header />
       <main id="main-content" className="pt-24 sm:pt-28">
         {/* Page Hero */}
-        <section className="border-b border-[#E2E8F0] bg-white py-16 sm:py-20 lg:py-24">
+        <section className="border-b border-[#E2E8F0] bg-background py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
-              <span>Sectors &amp; Environments</span>
+              <span>Industries &amp; Environments</span>
             </Reveal>
 
             <Reveal
@@ -39,14 +39,14 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-        {/* Sectors Architectural Grid */}
-        <section className="bg-white py-20 sm:py-28 lg:py-32">
+        {/* Industries Architectural Grid */}
+        <section className="bg-background py-20 sm:py-28 lg:py-32">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {industrySectors.map((sector, i) => (
                 <Reveal
                   key={sector.category}
-                  delay={i * 90}
+                  delay={(i % 3) * 140}
                   className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#0052CC]/50 hover:shadow-[0_12px_36px_rgba(0,82,204,0.08)]"
                 >
                   <div>
@@ -59,12 +59,9 @@ export default function IndustriesPage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-103"
                       />
-                      <span className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 font-serif text-xs font-semibold text-[#0052CC] shadow-xs backdrop-blur-xs">
-                        Sector 0{i + 1}
-                      </span>
                     </div>
 
-                    {/* Sector Content */}
+                    {/* Content */}
                     <div className="p-7 sm:p-8">
                       <p className="text-xs font-semibold uppercase tracking-wider text-[#64748B]">
                         {sector.tagline}
@@ -122,7 +119,7 @@ export default function IndustriesPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-[#0052CC] px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-[#0052CC]/15 transition-all hover:bg-[#0043A8] hover:shadow-lg cursor-pointer"
                 >
-                  <span>Discuss Your Sector Needs</span>
+                  <span>Discuss Your Specialized Requirements</span>
                 </Link>
               </div>
             </div>

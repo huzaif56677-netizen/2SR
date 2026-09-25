@@ -16,7 +16,7 @@ export function Hero() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <section id="top" className="relative overflow-hidden bg-white pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+    <section id="top" className="relative overflow-hidden bg-background pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
       {/* Subtle 2SR Brand Watermark (directly echoing the official company letterhead) */}
       <div 
         className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.03] select-none"
