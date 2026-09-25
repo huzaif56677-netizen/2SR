@@ -88,13 +88,12 @@ export function ScrollFocusCard({
 }) {
   const ref = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState(false)
-  const [focused, setFocused] = useState(false)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
 
-    // Entrance observer
+    // Entrance observer on scroll
     const entranceObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -108,23 +107,8 @@ export function ScrollFocusCard({
       { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
     )
 
-    // Center focal scroll observer (highlights card as you scroll past it)
-    const focalObserver = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          setFocused(entry.isIntersecting)
-        }
-      },
-      { threshold: 0.45, rootMargin: "-12% 0px -20% 0px" },
-    )
-
     entranceObserver.observe(el)
-    focalObserver.observe(el)
-
-    return () => {
-      entranceObserver.disconnect()
-      focalObserver.disconnect()
-    }
+    return () => entranceObserver.disconnect()
   }, [])
 
   return (
@@ -133,7 +117,6 @@ export function ScrollFocusCard({
       className={cn(
         "reveal newgen-card",
         visible && "is-visible",
-        focused && "is-focused",
         className,
       )}
       style={

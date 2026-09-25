@@ -150,8 +150,7 @@
     border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.newgen-card:hover,
-.newgen-card.is-focused {
+.newgen-card:hover {
   transform: translateY(-6px) scale(1.015) !important;
   box-shadow:
     0 20px 40px -15px rgba(0, 82, 204, 0.16),
@@ -175,8 +174,7 @@
   pointer-events: none;
 }
 
-.newgen-card:hover::before,
-.newgen-card.is-focused::before {
+.newgen-card:hover::before {
   opacity: 1;
 }
 
