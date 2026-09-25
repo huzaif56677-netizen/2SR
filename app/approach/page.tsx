@@ -1,0 +1,165 @@
+import type { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import { Header } from "@/components/site/header"
+import { Footer } from "@/components/site/footer"
+import { Reveal } from "@/components/site/reveal"
+import { approach } from "@/lib/site-data"
+
+export const metadata: Metadata = {
+  title: "Our Approach & Methodology",
+  description:
+    "Explore the 5-stage disciplined methodology 2SR Innovations applies across recruitment, corporate gifting, and HVAC/MEP engineering.",
+}
+
+const executionPillars = [
+  {
+    num: "01",
+    title: "Dedicated Single Point of Contact",
+    desc: "Every project is led by a dedicated engagement manager who oversees cross-functional execution and maintains clear, direct accountability.",
+  },
+  {
+    num: "02",
+    title: "Transparent Milestones & SLAs",
+    desc: "We establish measurable checkpoints and realistic delivery windows before kickoff — preventing scope creep and costly delays.",
+  },
+  {
+    num: "03",
+    title: "Rigorous Quality Verification",
+    desc: "From pre-placement candidate assessments to thermal HVAC balancing and bespoke gift packaging inspections, our quality audits are exhaustive.",
+  },
+  {
+    num: "04",
+    title: "Post-Delivery Continuity",
+    desc: "Delivery is never the end of our responsibility. We provide ongoing support, warranty backing, and relationship management long after handover.",
+  },
+]
+
+export default function ApproachPage() {
+  return (
+    <>
+      <Header />
+      <main id="main-content" className="pt-24 sm:pt-28">
+        {/* Page Hero */}
+        <section className="border-b border-[#E2DFD5] bg-[#F8F6F0] py-16 sm:py-20 lg:py-24">
+          <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+            <Reveal as="div" className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
+              How We Work
+            </Reveal>
+
+            <Reveal
+              as="h1"
+              delay={80}
+              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#111111]"
+            >
+              A calm, structured approach to every requirement.
+            </Reveal>
+
+            <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#3B4048] sm:text-xl">
+              We replace guesswork and fragmented coordination with a disciplined, five-stage delivery framework. Whether filling key executive positions, producing corporate gift collections, or engineering MEP systems, the methodology remains rock-solid.
+            </Reveal>
+          </div>
+        </section>
+
+        {/* 5 Stages Detail */}
+        <section className="border-b border-[#E2DFD5] bg-[#F8F6F0] py-20 sm:py-28 lg:py-32">
+          <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+              {/* Sticky Sidebar on Desktop */}
+              <div className="lg:col-span-4">
+                <div className="lg:sticky lg:top-28">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#636875]">
+                    The 5-Stage Framework
+                  </span>
+                  <h2 className="mt-3 font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+                    Predictable outcomes through disciplined steps.
+                  </h2>
+                  <p className="mt-4 text-pretty text-base leading-relaxed text-[#4B515D]">
+                    By standardizing discovery, planning, execution, verification, and support, we ensure every stakeholder experiences clarity at every juncture.
+                  </p>
+
+                  <div className="mt-8 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#E2DFD5] bg-[#EAE7DF] shadow-md">
+                    <Image
+                      src="/images/collaboration.png"
+                      alt="Team executing a structured corporate engagement"
+                      fill
+                      sizes="350px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Sequential Steps */}
+              <div className="lg:col-span-8 divide-y divide-[#E2DFD5]">
+                {approach.map((item) => (
+                  <Reveal key={item.step} className="grid grid-cols-1 gap-6 py-10 sm:grid-cols-12 sm:gap-8">
+                    <div className="sm:col-span-2">
+                      <span className="font-serif text-4xl font-medium text-[#111111]">{item.step}</span>
+                    </div>
+                    <div className="sm:col-span-10">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#636875]">
+                        {item.lead}
+                      </span>
+                      <h3 className="mt-1 font-serif text-2xl font-normal text-[#111111] sm:text-3xl">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 text-pretty text-base leading-relaxed text-[#4B515D]">
+                        {item.text}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Quality Assurance Pillars */}
+        <section className="bg-[#F1EFE8] py-20 sm:py-28 lg:py-32">
+          <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+            <div className="max-w-2xl">
+              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#636875]">
+                Governance &amp; Assurance
+              </span>
+              <h2 className="mt-2 font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+                The principles governing our delivery.
+              </h2>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {executionPillars.map((p) => (
+                <div
+                  key={p.num}
+                  className="rounded-2xl border border-[#E2DFD5] bg-white p-7 shadow-xs transition-colors hover:border-[#CBC6B9]"
+                >
+                  <span className="font-serif text-sm font-semibold text-[#111111]">{p.num}</span>
+                  <h4 className="mt-3 font-serif text-xl font-normal text-[#111111]">{p.title}</h4>
+                  <p className="mt-3 text-pretty text-sm leading-relaxed text-[#4B515D]">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 rounded-2xl border border-[#E2DFD5] bg-white p-8 text-center sm:p-12 shadow-xs">
+              <h3 className="font-serif text-3xl font-normal text-[#111111] sm:text-4xl">
+                Experience the 2SR difference on your next project.
+              </h3>
+              <p className="mx-auto mt-3 max-w-lg text-pretty text-base text-[#4B515D]">
+                Let us structure an actionable scope with realistic timelines and dedicated resources.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#111111] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#2A2A2A] cursor-pointer"
+                >
+                  <span>Initiate a Conversation</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}
