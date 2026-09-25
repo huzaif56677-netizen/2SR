@@ -159,23 +159,19 @@
   z-index: 10;
 }
 
-.newgen-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0052CC, #0080FF);
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+/* Metallic Silver Typography (matching authentic 2SR emblem in user image) */
+.silver-metallic {
+  background: linear-gradient(180deg, #5A6A85 0%, #1A2536 38%, #8E9DB5 60%, #3B485E 85%, #0F172A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
-.newgen-card:hover::before {
-  opacity: 1;
+.silver-metallic-subtle {
+  background: linear-gradient(180deg, #6B7C96 0%, #2D3A4F 40%, #99A8BF 75%, #3B485E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 /* Smooth curtain reveal for images */

@@ -22,7 +22,7 @@ export function Wordmark({
 
   return (
     <div className={cn("inline-flex items-center gap-2.5 sm:gap-3.5 select-none", className)}>
-      <div className={cn("relative shrink-0 transition-transform duration-300 group-hover:scale-105", dimensions.img)}>
+      <div className={cn("relative shrink-0", dimensions.img)}>
         <Image
           src="/images/logo.png"
           alt="2SR Innovations Logo"
@@ -34,10 +34,10 @@ export function Wordmark({
       </div>
       {showText && (
         <div className="flex items-center gap-1.5 whitespace-nowrap leading-none">
-          <span className={cn("font-serif font-bold tracking-tight text-[#0A1128]", dimensions.font)}>
+          <span className={cn("font-serif font-bold tracking-tight silver-metallic", dimensions.font)}>
             2SR
           </span>
-          <span className={cn("font-serif font-medium tracking-tight text-[#0052CC]", dimensions.font)}>
+          <span className={cn("font-serif font-medium tracking-tight silver-metallic-subtle", dimensions.font)}>
             Innovations
           </span>
         </div>
