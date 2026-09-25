@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
 import { Reveal, ScrollFocusCard } from "@/components/site/reveal"
+import { ScrollTimeline } from "@/components/site/scroll-timeline"
 import { milestones, visionMission } from "@/lib/site-data"
 
 export const metadata: Metadata = {
@@ -171,25 +172,7 @@ export default function AboutPage() {
               </Reveal>
             </div>
 
-            <div className="mt-12 divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
-              {milestones.map((m, i) => (
-                <Reveal
-                  key={m.year}
-                  delay={i * 180}
-                  className="grid grid-cols-1 items-start gap-4 py-8 sm:grid-cols-12 sm:gap-8 sm:py-10"
-                >
-                  <div className="sm:col-span-2">
-                    <span className="font-serif text-3xl font-medium text-[#0052CC]">{m.year}</span>
-                  </div>
-                  <div className="sm:col-span-4">
-                    <h3 className="font-serif text-2xl font-normal text-[#0A1128]">{m.title}</h3>
-                  </div>
-                  <div className="sm:col-span-6">
-                    <p className="text-pretty text-base leading-relaxed text-[#475569]">{m.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <ScrollTimeline milestones={milestones} />
           </div>
         </section>
 
