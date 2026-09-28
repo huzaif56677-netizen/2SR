@@ -21,7 +21,7 @@ export function About() {
 
           <div className="mt-8 grid max-w-2xl grid-cols-1 gap-5 sm:grid-cols-2">
             <Reveal as="p" delay={140} className="text-pretty text-base leading-relaxed text-foreground/80">
-              Founded in 2019, 2SR Innovations began as a recruitment-led firm helping companies
+              Founded in 2010, 2SR Innovations began as a recruitment-led firm helping companies
               meet their human-capital needs across engineering, technology and specialised domains.
             </Reveal>
             <Reveal as="p" delay={200} className="text-pretty text-base leading-relaxed text-muted-foreground">

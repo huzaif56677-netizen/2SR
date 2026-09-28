@@ -59,8 +59,11 @@ export function ScrollTimeline({ milestones }: { milestones: Milestone[] }) {
 
       {/* Dynamic Animated Scroll Progress Line */}
       <div
-        className="absolute left-4 top-4 w-[2.5px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#0052CC] via-[#2684FF] to-[#0052CC] transition-[height] duration-150 ease-out sm:left-1/2 shadow-[0_0_12px_rgba(0,82,204,0.35)]"
-        style={{ height: `${progress * 100}%` }}
+        className="absolute left-4 top-4 w-[2.5px] -translate-x-1/2 rounded-full transition-[height] duration-150 ease-out sm:left-1/2 shadow-[0_0_12px_rgba(0,82,204,0.35)]"
+        style={{
+          height: `${progress * 100}%`,
+          background: "linear-gradient(to bottom, #0052CC, #2684FF, #0052CC)",
+        }}
         aria-hidden="true"
       >
         {/* Glowing Head of the Timeline Line */}
@@ -126,9 +129,6 @@ export function ScrollTimeline({ milestones }: { milestones: Milestone[] }) {
                     )}
                   >
                     {item.year}
-                  </span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-[#64748B] mt-0.5">
-                    Phase 0{index + 1}
                   </span>
                 </div>
               </div>

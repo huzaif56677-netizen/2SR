@@ -9,14 +9,13 @@ export function Why() {
           {/* Left Column: Heading & Premise */}
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
-              <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
                 <span>Why 2SR Innovations</span>
               </Reveal>
               <Reveal
                 as="h2"
                 delay={60}
-                className="text-balance font-serif text-[clamp(2.3rem,4.5vw,3.6rem)] font-normal leading-[1.08] tracking-tight text-[#0A1128]"
+                className="text-balance font-serif text-[clamp(1.9rem,5vw,3.6rem)] font-normal leading-[1.38] sm:leading-[1.32] tracking-tight text-[#0A1128]"
               >
                 What makes working with us different.
               </Reveal>
@@ -33,7 +32,7 @@ export function Why() {
                 <ScrollFocusCard
                   key={item.number}
                   delay={i * 260}
-                  className="group flex flex-col justify-between rounded-2xl border border-[#CBD5E1] bg-white p-7 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] cursor-pointer"
+                  className="group flex flex-col justify-between rounded-2xl border border-[#CBD5E1] bg-white p-5 sm:p-7 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] cursor-pointer"
                 >
                   <div>
                     <div className="flex items-center justify-between">
@@ -44,7 +43,7 @@ export function Why() {
                         {item.subtitle}
                       </span>
                     </div>
-                    <h3 className="mt-5 font-serif text-2xl font-normal text-[#0A1128] group-hover:text-[#0052CC] transition-colors">
+                    <h3 className="mt-5 font-serif text-xl sm:text-2xl font-normal text-[#0A1128] group-hover:text-[#0052CC] transition-colors">
                       {item.title}
                     </h3>
                     <p className="mt-3 text-pretty text-[15px] sm:text-base leading-relaxed text-[#475569]">
@@ -57,9 +56,9 @@ export function Why() {
               {/* Stat card */}
               <ScrollFocusCard
                 delay={4 * 260}
-                className="flex flex-col justify-center rounded-2xl border border-[#0A1128] bg-[#0A1128] p-7 sm:p-8 text-center sm:text-left text-white shadow-lg cursor-pointer"
+                className="flex flex-col justify-center rounded-2xl border border-[#0A1128] bg-[#0A1128] p-6 sm:p-7 md:p-8 text-center sm:text-left text-white shadow-lg cursor-pointer"
               >
-                <p className="font-serif text-4xl font-normal text-white">5+ Years</p>
+                <p className="font-serif text-4xl font-normal text-white">15+ Years</p>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#00A3FF]">Dependable Corporate Track Record</p>
                 <p className="mt-3 text-sm leading-relaxed text-[#94A3B8]">
                   Trusted by growing enterprises and industry leaders across India.

@@ -3,30 +3,51 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Approach", href: "/approach" },
   { label: "Industries", href: "/industries" },
-  { label: "Work", href: "/work" },
   { label: "Contact", href: "/contact" },
 ]
 
 export const contactInfo = {
   phone: "+91 91139 61458",
   phoneRaw: "+919113961458",
-  emailHr: "hr@2srinnovations.com",
-  emailGeneral: "hello@2srinnovations.com",
+  emailHr: "roohi.salar@2srinnovations.com",
+  emailGeneral: "roohi.salar@2srinnovations.com",
   website: "www.2srinnovations.com",
   hours: "Monday – Saturday, 9:00 AM – 6:30 PM IST",
   address: "India",
 }
 
-/**
- * Client / partner names shown in the marquee.
- */
-export const clients = [
-  "Corporate Enterprise",
-  "Tech & AI Labs",
-  "Financial Markets",
-  "Engineering Consortium",
-  "Hospitality Group",
-  "Global Logistics",
+// Client / partner items shown in the marquee.
+export type ClientItem = {
+  name: string
+  logo: string
+  displayName?: string
+}
+
+export const clients: ClientItem[] = [
+  {
+    name: "Aditya Birla",
+    logo: "/images/clients/aditya-birla.png",
+  },
+  {
+    name: "ICICI Lombard",
+    logo: "/images/clients/icici-lombard.png",
+  },
+  {
+    name: "Policybazaar",
+    logo: "/images/clients/policybazaar.webp",
+  },
+  {
+    name: "Cholamandalam Securities",
+    logo: "/images/clients/cholamandalam.png",
+  },
+  {
+    name: "Motilal Oswal",
+    logo: "/images/clients/motilal-oswal.png",
+  },
+  {
+    name: "Kotak Securities",
+    logo: "/images/clients/kotak.webp",
+  },
 ]
 
 export type Service = {
@@ -247,94 +268,6 @@ export const industries = [
   { name: "Professional Services", image: "/images/about.png", desc: "Executive search, strategic talent mapping, and corporate celebration gifts." },
 ]
 
-export type Project = {
-  id: string
-  category: string
-  pillar: string
-  title: string
-  clientType: string
-  description: string
-  scope: string[]
-  metric: string
-  metricLabel: string
-  image: string
-}
-
-export const projects: Project[] = [
-  {
-    id: "PROJECT-01",
-    category: "End-to-End Recruitment",
-    pillar: "People",
-    title: "Engineering & Technology Talent Scaling Drive",
-    clientType: "Global Technology & Engineering Enterprise",
-    description: "A comprehensive recruitment engagement to source, evaluate, and place specialized engineers and technical architects for a multi-city expansion project.",
-    scope: ["Role profiling & market talent mapping", "Pre-screening & technical assessment", "Interview facilitation", "Onboarding support"],
-    metric: "45+",
-    metricLabel: "Specialized roles filled in 60 days",
-    image: "/images/recruitment.png",
-  },
-  {
-    id: "PROJECT-02",
-    category: "Corporate Gifting",
-    pillar: "Experiences",
-    title: "Nationwide Executive & Client Festive Gifting Program",
-    clientType: "Multinational Financial Services Group",
-    description: "End-to-end conceptualization, procurement, bespoke branding, and multi-location dispatch of premium festive gift hampers for key executive stakeholders and top-tier clients.",
-    scope: ["Custom hamper packaging design", "Curated artisanal & branded products", "Strict quality control", "Pan-India scheduled courier logistics"],
-    metric: "1,200+",
-    metricLabel: "Executive kits delivered on schedule",
-    image: "/images/gifting.png",
-  },
-  {
-    id: "PROJECT-03",
-    category: "HVAC & MEP",
-    pillar: "Infrastructure",
-    title: "Commercial Corporate Facility HVAC Modernization",
-    clientType: "50,000 sq.ft. Corporate Headquarters",
-    description: "Full assessment, design, and turnkey replacement of commercial rooftop HVAC ducting and VRF units, optimizing airflow and substantially reducing building energy consumption.",
-    scope: ["Thermal load calculations", "Turnkey VRF installation & ducting", "Air balancing & acoustic testing", "Preventative maintenance SLA"],
-    metric: "18%",
-    metricLabel: "Reduction in energy consumption",
-    image: "/images/work-engineering.png",
-  },
-  {
-    id: "PROJECT-04",
-    category: "End-to-End Recruitment",
-    pillar: "People",
-    title: "Rapid Workforce Deployment for New Operational Hub",
-    clientType: "Logistics & Supply Chain Leader",
-    description: "Bulk recruitment drive covering operations managers, logistics supervisors, and specialized technical operators ahead of a major facility commissioning.",
-    scope: ["Campus & regional recruitment drives", "Background screening", "Short-cycle interviewing", "Batch placement support"],
-    metric: "120+",
-    metricLabel: "Personnel deployed across 3 centers",
-    image: "/images/team-meeting.png",
-  },
-  {
-    id: "PROJECT-05",
-    category: "Corporate Gifting",
-    pillar: "Experiences",
-    title: "New Hire Onboarding & Culture Box Rollout",
-    clientType: "High-Growth FinTech Organization",
-    description: "Created a sustainable, high-touch onboarding package for all incoming team members, complete with branded stationery, tech gear, and apparel.",
-    scope: ["Eco-friendly packaging selection", "Brand guideline matching", "Warehousing & continuous fulfillment", "Zero defect delivery"],
-    metric: "100%",
-    metricLabel: "First-day employee delivery rate",
-    image: "/images/work-corporate.png",
-  },
-  {
-    id: "PROJECT-06",
-    category: "HVAC & MEP",
-    pillar: "Infrastructure",
-    title: "Multi-Store Commercial MEP Preventative Maintenance",
-    clientType: "National Retail & Commercial Chain",
-    description: "Annual maintenance contract covering mechanical ventilation, electrical boards, and plumbing systems across 12 high-footfall retail outlets.",
-    scope: ["Quarterly preventative inspections", "Rapid 4-hour breakdown SLA", "Energy auditing", "Compliance documentation"],
-    metric: "99.8%",
-    metricLabel: "Facility uptime maintained",
-    image: "/images/hvac.png",
-  },
-]
-
 export const differentiators = [
   {
     number: "01",
@@ -370,29 +303,24 @@ export const differentiators = [
 
 export const milestones = [
   {
-    year: "2019",
+    year: "2010",
     title: "Company Founded",
-    text: "2SR Innovations is established as a recruitment-led firm serving corporate human capital needs across Engineering & Technology.",
+    text: "2SR Innovations is established in 2010, laying the foundation for disciplined corporate partnership and enterprise service delivery.",
   },
   {
-    year: "2021",
-    title: "Market Strengthening",
-    text: "Expanded the corporate client portfolio, strengthened candidate sourcing strategies, and achieved key revenue and placement efficiency milestones.",
+    year: "2015",
+    title: "Specialized Recruitment & Talent Consultation",
+    text: "Scaled dedicated executive recruitment and strategic workforce consultation, partnering with leading institutions across Engineering, BFSI, and Technology.",
   },
   {
-    year: "2022",
-    title: "Operational Development",
-    text: "Introduced advanced recruitment management tools, formalized corporate gifting capabilities, and streamlined internal delivery workflows.",
-  },
-  {
-    year: "2023",
-    title: "Team & Capability Expansion",
-    text: "Grew the specialized consulting team, integrated HVAC & MEP engineering services, and established comprehensive advisory support.",
+    year: "2019",
+    title: "Multi-Vertical Gifting & Corporate Expansion",
+    text: "Formalized comprehensive corporate relationship gifting and bespoke experiential procurement, scaling operations across key regional commercial hubs.",
   },
   {
     year: "2024",
-    title: "Modernization & Strategic Reach",
-    text: "Strengthened employer branding, adopted skills-based sourcing models, and expanded cross-disciplinary delivery across regional corporate hubs.",
+    title: "Integrated Facility Infrastructure & National Scale",
+    text: "Integrated full-scale commercial HVAC & MEP engineering capabilities, delivering unified people, experiences, and infrastructure solutions across India.",
   },
 ]
 

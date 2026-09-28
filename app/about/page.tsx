@@ -10,7 +10,7 @@ import { milestones, visionMission } from "@/lib/site-data"
 export const metadata: Metadata = {
   title: "About 2SR Innovations",
   description:
-    "Founded in 2019, 2SR Innovations is an integrated corporate enablement firm delivering recruitment, corporate gifting, and HVAC/MEP solutions across India.",
+    "Founded in 2010, 2SR Innovations is an integrated corporate enablement firm delivering recruitment, corporate gifting, and HVAC/MEP solutions across India.",
 }
 
 const values = [
@@ -36,25 +36,24 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="pt-24 sm:pt-28">
+      <main id="main-content">
         {/* Page Hero */}
-        <section className="border-b border-[#E2E8F0] bg-background py-10 sm:py-12 lg:py-14">
+        <section className="border-b border-[#E2E8F0] bg-background pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pb-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+            <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span>Our Story &amp; Purpose</span>
             </Reveal>
 
             <Reveal
               as="h1"
               delay={80}
-              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
+              className="text-balance font-serif text-[clamp(2.1rem,6.5vw,4.8rem)] sm:text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.38] sm:leading-[1.32] tracking-tight text-[#0A1128]"
             >
               Built around people. Powered by expertise.
             </Reveal>
 
             <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl">
-              Established in 2019, 2SR Innovations began as a specialized recruitment consultancy committed to connecting exceptional professionals with forward-thinking enterprises. Today, we stand as an integrated corporate services firm spanning talent, experiences, and critical facility infrastructure.
+              Established in 2010, 2SR Innovations began as a specialized recruitment consultancy committed to connecting exceptional professionals with forward-thinking enterprises. Today, we stand as an integrated corporate services firm spanning talent, experiences, and critical facility infrastructure.
             </Reveal>
           </div>
         </section>
@@ -80,7 +79,7 @@ export default function AboutPage() {
 
                 <div className="mt-8 grid grid-cols-2 gap-6 border-t border-[#E2E8F0] pt-6">
                   <div>
-                    <p className="font-serif text-4xl font-normal text-[#0052CC]">2019</p>
+                    <p className="font-serif text-4xl font-normal text-[#0052CC]">2010</p>
                     <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#64748B]">Year Founded</p>
                   </div>
                   <div>
@@ -122,8 +121,7 @@ export default function AboutPage() {
         <section className="border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="text-center max-w-2xl mx-auto">
-              <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
                 <span>Strategic Foundation</span>
               </Reveal>
               <Reveal as="h2" delay={60} className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl mt-3">
@@ -163,12 +161,11 @@ export default function AboutPage() {
         <section className="border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
-              <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
                 <span>Milestones &amp; Journey</span>
               </Reveal>
               <Reveal as="h2" delay={80} className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl mt-3">
-                Five years of intentional growth.
+                Fifteen years of intentional growth.
               </Reveal>
             </div>
 
@@ -180,8 +177,7 @@ export default function AboutPage() {
         <section className="py-12 sm:py-14 lg:py-16 bg-[#F8FAFC]">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="max-w-2xl">
-              <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+              <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
                 <span>Operating Principles</span>
               </Reveal>
               <Reveal as="h2" delay={80} className="font-serif text-3xl font-normal text-[#0A1128] sm:text-4xl mt-3">

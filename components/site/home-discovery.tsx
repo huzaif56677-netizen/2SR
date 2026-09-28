@@ -6,17 +6,17 @@ const discoverySections = [
   {
     title: "About 2SR",
     tagline: "Our Journey & Purpose",
-    description: "Founded in 2019, 2SR Innovations has grown from a specialized recruitment firm into an integrated corporate services partner.",
+    description: "Founded in 2010, 2SR Innovations has grown from a specialized recruitment firm into an integrated corporate services partner.",
     href: "/about",
     image: "/images/about.png",
-    stat: "Est. 2019",
+    stat: "Est. 2010",
   },
   {
     title: "Our Approach",
     tagline: "Disciplined 5-Stage Method",
     description: "Understand, Plan, Execute, Deliver, Support. A calm, structured framework applied to every single corporate deliverable.",
     href: "/approach",
-    image: "/images/collaboration.png",
+    image: "/images/approach.png",
     stat: "5 Stages",
   },
   {
@@ -27,40 +27,35 @@ const discoverySections = [
     image: "/images/work-corporate.png",
     stat: "6 Domains",
   },
-  {
-    title: "Selected Work",
-    tagline: "Case Studies & Outcomes",
-    description: "Examine verified engagements across high-volume recruitment drives, executive festive gifting, and commercial HVAC overhauls.",
-    href: "/work",
-    image: "/images/work-engineering.png",
-    stat: "Case Studies",
-  },
 ]
 
 export function HomeDiscovery() {
   return (
     <section className="relative border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        <div className="flex flex-col justify-between gap-6 border-b border-[#CBD5E1] pb-8 lg:flex-row lg:items-end">
-          <div className="max-w-2xl">
-            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
-              <span>Explore Further</span>
-            </Reveal>
+        <div className="border-b border-[#CBD5E1] pb-8">
+          <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
+            <span>Explore Further</span>
+          </Reveal>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <Reveal
               as="h2"
               delay={60}
-              className="text-balance font-serif text-[clamp(2.4rem,5vw,4.2rem)] font-normal leading-[1.04] tracking-tight text-[#0A1128]"
+              className="max-w-2xl text-balance font-serif text-[clamp(2.1rem,5vw,4.2rem)] font-normal leading-[1.3] tracking-tight text-[#0A1128]"
             >
               Discover the organization behind the results.
             </Reveal>
+            <Reveal
+              as="p"
+              delay={120}
+              className="max-w-xl text-pretty text-lg font-normal leading-relaxed text-[#334155] sm:text-xl lg:pb-1.5"
+            >
+              Explore our company history, disciplined delivery framework, and specialized cross-industry capabilities.
+            </Reveal>
           </div>
-          <Reveal as="p" delay={120} className="max-w-md text-pretty text-base font-normal leading-relaxed text-[#334155] sm:text-lg">
-            Explore our company history, disciplined delivery framework, cross-industry expertise, and past engagements.
-          </Reveal>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {discoverySections.map((item, i) => (
             <ScrollFocusCard
               key={item.title}

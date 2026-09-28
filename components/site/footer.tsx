@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { nav, contactInfo } from "@/lib/site-data"
 import { Wordmark } from "./wordmark"
 
@@ -12,6 +15,25 @@ const serviceLinks = [
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/") {
+      e.preventDefault()
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    } else {
+      e.preventDefault()
+      router.push("/")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
+  }
 
   return (
     <footer className="border-t border-[#E2E8F0] bg-[#F8FAFC] text-[#0A1128] transition-colors">
@@ -19,11 +41,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Info */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block cursor-pointer focus:outline-none" aria-label="2SR Innovations">
+            <Link
+              href="/"
+              onClick={handleLogoClick}
+              className="inline-block cursor-pointer focus:outline-none"
+              aria-label="2SR Innovations"
+            >
               <Wordmark size="md" />
             </Link>
             <p className="mt-5 max-w-sm text-pretty text-[15px] leading-relaxed text-[#475569]">
-              One accountable partner for recruitment, curated corporate gifting, and turnkey HVAC &amp; MEP engineering. Delivering measurable value with quiet discipline since 2019.
+              One accountable partner for recruitment, curated corporate gifting, and turnkey HVAC &amp; MEP engineering. Delivering measurable value with quiet discipline since 2010.
             </p>
 
             <div className="mt-8 space-y-2.5 text-[15px] text-[#475569]">

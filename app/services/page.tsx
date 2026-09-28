@@ -16,15 +16,15 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="pt-24 sm:pt-28">
+      <main id="main-content">
         {/* Page Header */}
-        <section className="border-b border-[#E2E8F0] bg-background py-10 sm:py-12 lg:py-14">
+        <section className="border-b border-[#E2E8F0] bg-background pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pb-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
 
             <Reveal
               as="h1"
               delay={80}
-              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
+              className="text-balance font-serif text-[clamp(2.1rem,6.5vw,4.8rem)] sm:text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.38] sm:leading-[1.32] tracking-tight text-[#0A1128]"
             >
               Three capabilities. One standard of excellence.
             </Reveal>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
                         </span>
                       </div>
 
-                      <h2 className="mt-4 font-serif text-[clamp(2.2rem,4.5vw,3.6rem)] font-normal leading-[1.08] text-[#0A1128]">
+                      <h2 className="mt-4 font-serif text-[clamp(2.2rem,4.5vw,3.6rem)] font-normal leading-[1.38] sm:leading-[1.32] text-[#0A1128]">
                         {service.title}
                       </h2>
 
@@ -147,10 +147,10 @@ export default function ServicesPage() {
                           <span>Consult on {service.pillar}</span>
                         </Link>
                         <Link
-                          href="/work"
+                          href="/industries"
                           className="inline-flex items-center gap-2 text-sm font-semibold text-[#0052CC] hover:text-[#0043A8] transition-colors cursor-pointer"
                         >
-                          <span>View Case Studies &rarr;</span>
+                          <span>Explore Industries &rarr;</span>
                         </Link>
                       </div>
                     </div>

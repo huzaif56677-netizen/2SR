@@ -1,13 +1,24 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next"
-import { DM_Serif_Display, Inter } from "next/font/google"
+import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 import "./globals.css"
 
-const dmSerif = DM_Serif_Display({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
+const memogram = localFont({
+  src: [
+    {
+      path: "../public/fonts/Memogram-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Memogram-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
   variable: "--font-serif",
+  display: "swap",
 })
 
 const inter = Inter({
@@ -38,8 +49,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "2SR Innovations" }],
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     type: "website",
@@ -60,6 +75,9 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   colorScheme: "light",
   themeColor: "#0052CC",
 }
@@ -70,7 +88,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${inter.variable}`}>
+    <html lang="en" className={`${memogram.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        />
+      </head>
       <body className="min-h-screen bg-background text-foreground antialiased selection:bg-[#0052CC] selection:text-white">
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}

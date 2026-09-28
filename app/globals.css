@@ -39,19 +39,19 @@
   /* Theme matching 2SR Logo & Modern Corporate Design:
      Clearly visible cool-slate light background #E8EDF5, pure elevated white cards #FFFFFF,
      vibrant 2SR Royal Cobalt Blue #0052CC, deep navy ink #0A1128 */
-  --background: #E8EDF5;
+  --background: #C4DCF6;
   --foreground: #091124;
   --surface: #FFFFFF;
-  --surface-subtle: #DEE6F0;
+  --surface-subtle: #B3D2F2;
   --ink: #0A1128;
-  --muted: #D5DFEC;
-  --muted-foreground: #475569;
-  --border: #CBD5E1;
-  --border-strong: #94A3B8;
+  --muted: #A2C6ED;
+  --muted-foreground: #334155;
+  --border: #97BEEA;
+  --border-strong: #588BC2;
 
   /* 2SR Signature Royal Cobalt & Cyan Accent */
-  --accent: #0052CC;
-  --accent-hover: #0043A8;
+  --accent: #1547E0;
+  --accent-hover: #0E37B5;
   --accent-foreground: #FFFFFF;
 
   --card: #FFFFFF;
@@ -59,54 +59,106 @@
   --popover: #FFFFFF;
   --popover-foreground: #091124;
 
-  --primary: #0052CC;
+  --primary: #1547E0;
   --primary-foreground: #FFFFFF;
-  --secondary: #EBF3FC;
-  --secondary-foreground: #0052CC;
+  --secondary: #D7E8FA;
+  --secondary-foreground: #1547E0;
   --destructive: #DC2626;
-  --input: #CBD5E1;
-  --ring: #0052CC;
+  --input: #A3C2E3;
+  --ring: #1547E0;
   --radius: 0.5rem;
 }
 
 @layer base {
+  /* Force zero shadow and zero border on header across the entire application */
+  header,
+  header *,
+  header::before,
+  header::after {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+
+  header {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+  }
+
   * {
     @apply border-border;
     box-sizing: border-box;
   }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--background);
     color: var(--foreground);
+    overflow-x: hidden;
   }
+
   body {
     background-color: var(--background);
+    background-image:
+      radial-gradient(circle at 95% 25%, rgba(21, 71, 224, 0.12), transparent 40%),
+      radial-gradient(circle at 5% 55%, rgba(10, 46, 160, 0.10), transparent 45%),
+      radial-gradient(ellipse 80% 30% at 50% 100%, rgba(15, 61, 201, 0.10), transparent 50%);
+    background-attachment: fixed;
     color: var(--foreground);
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 1.0625rem;
     line-height: 1.65;
     letter-spacing: -0.012em;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
+
   ::selection {
-    background: #0052CC;
+    background: #1547E0;
     color: #FFFFFF;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.025em;
+    text-rendering: optimizeLegibility;
+    line-height: 1.35;
   }
 }
 
 @layer utilities {
   .font-serif {
     font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height: 1.35;
   }
+
   .font-sans {
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
+
   .text-balance {
     text-wrap: balance;
   }
+
   .text-pretty {
     text-wrap: pretty;
+  }
+
+  /* Lighter 2SR Logo Royal Cobalt Palette - vibrant and radiant without dark navy tones */
+  .header-logo-gradient {
+    background: linear-gradient(108deg, #134fe6 0%, #1b5ef0 35%, #2772f7 70%, #3a85fa 100%);
+  }
+
+  .header-logo-gradient-scrolled {
+    background: linear-gradient(108deg, rgba(19, 79, 230, 0.96) 0%, rgba(27, 94, 240, 0.96) 35%, rgba(39, 114, 247, 0.96) 70%, rgba(58, 133, 250, 0.96) 100%);
   }
 }
 
@@ -115,13 +167,16 @@
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #F8FAFC;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
 }
@@ -136,6 +191,7 @@
   transition-delay: var(--reveal-delay, 0ms) !important;
   will-change: opacity, transform;
 }
+
 .reveal.is-visible {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
@@ -179,6 +235,7 @@
   transition-delay: var(--reveal-delay, 0ms);
   pointer-events: none;
 }
+
 .clip-reveal.is-visible::after {
   transform: scaleY(0);
 }
@@ -188,13 +245,19 @@
   overflow: hidden;
   display: block;
 }
+
+.line-mask.revealed {
+  overflow: visible !important;
+}
+
 .line-inner {
   display: block;
   transform: translateY(105%);
   transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
-.is-visible > .line-inner,
+
+.is-visible>.line-inner,
 .is-visible .line-inner,
 .line-inner.is-visible {
   transform: translateY(0);
@@ -203,17 +266,24 @@
 /* --- Marquee --- */
 @keyframes marquee-scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
+
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
+
 .marquee-track {
   display: flex;
   width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   animation: marquee-scroll var(--marquee-duration, 45s) linear infinite;
 }
+
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -223,6 +293,7 @@
   position: relative;
   display: inline-flex;
 }
+
 .link-underline::after {
   content: "";
   position: absolute;
@@ -235,6 +306,7 @@
   transform-origin: right;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .link-underline:hover::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -244,6 +316,7 @@
   html {
     scroll-behavior: auto;
   }
+
   .reveal,
   .line-inner,
   .clip-reveal {
@@ -251,6 +324,7 @@
     opacity: 1 !important;
     transform: none !important;
   }
+
   .marquee-track {
     animation-duration: 100s;
   }

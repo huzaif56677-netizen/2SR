@@ -16,19 +16,18 @@ export default function IndustriesPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="pt-24 sm:pt-28">
+      <main id="main-content">
         {/* Page Hero */}
-        <section className="border-b border-[#CBD5E1] bg-background py-10 sm:py-12 lg:py-14">
+        <section className="border-b border-[#CBD5E1] bg-background pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pb-14">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <Reveal as="div" className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0052CC]" />
+            <Reveal as="div" className="mb-3 inline-flex items-center rounded-full bg-[#EBF3FC] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0052CC]">
               <span>Industries &amp; Environments</span>
             </Reveal>
 
             <Reveal
               as="h1"
               delay={60}
-              className="text-balance font-serif text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.02] tracking-tight text-[#0A1128]"
+              className="text-balance font-serif text-[clamp(2.1rem,6.5vw,4.8rem)] sm:text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.38] sm:leading-[1.32] tracking-tight text-[#0A1128]"
             >
               Working across industries and specialized environments.
             </Reveal>
