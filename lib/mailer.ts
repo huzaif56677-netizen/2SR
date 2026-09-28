@@ -63,12 +63,12 @@ export async function sendEnquiryEmail(params: SendEnquiryParams): Promise<{ suc
 
             <div class="grid-row">
               <div class="label">Email</div>
-              <div class="value"><a href="mailto:${escapeHtml(email)}" style="color: #0052CC; text-decoration: none;">${escapeHtml(email)}</a></div>
+              <div class="value">${escapeHtml(email)}</div>
             </div>
 
             <div class="grid-row">
               <div class="label">Phone</div>
-              <div class="value"><a href="tel:${escapeHtml(phone)}" style="color: #0052CC; text-decoration: none;">${escapeHtml(phone)}</a></div>
+              <div class="value">${escapeHtml(phone)}</div>
             </div>
 
             <div class="grid-row">
