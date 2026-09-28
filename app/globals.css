@@ -70,6 +70,7 @@
 }
 
 @layer base {
+
   /* Force zero shadow and zero border on header across the entire application */
   header,
   header *,
