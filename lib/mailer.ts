@@ -111,7 +111,43 @@ ${message || "No additional description provided."}
 ---------------------------------------------
   `
 
-  // 1. Resend API mode if RESEND_API_KEY is present
+  // 1. SMTP mode (Hostinger / Custom SMTP - Direct & Guaranteed Delivery)
+  if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+    try {
+      const port = parseInt(process.env.SMTP_PORT || "465", 10)
+      const isSecure = process.env.SMTP_SECURE === "true" || port === 465
+
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port,
+        secure: isSecure,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      })
+
+      const info = await transporter.sendMail({
+        from: `"2SR Innovations" <${process.env.SMTP_USER}>`,
+        replyTo: `"${name}" <${email}>`,
+        to: recipientEmail,
+        subject: `[New Enquiry: ${service}] from ${name} (${company || "Corporate"})`,
+        text: textContent,
+        html: htmlContent,
+      })
+
+      console.log(`[Mailer] Successfully delivered via Hostinger SMTP to ${recipientEmail} (ID: ${info.messageId})`)
+      return { success: true, messageId: info.messageId, mode: "smtp" }
+    } catch (smtpErr: any) {
+      console.error("[Mailer] Hostinger SMTP Error:", smtpErr)
+      // If neither Resend nor other fallback is available, fail gracefully
+      if (!process.env.RESEND_API_KEY && !process.env.WEB3FORMS_ACCESS_KEY) {
+        throw new Error(`Email delivery failed via Hostinger SMTP: ${smtpErr?.message || "Please check credentials"}`)
+      }
+    }
+  }
+
+  // 2. Resend API mode (Fallback if SMTP is not provided or fails)
   if (process.env.RESEND_API_KEY) {
     try {
       const res = await fetch("https://api.resend.com/emails", {
@@ -159,7 +195,7 @@ ${message || "No additional description provided."}
               html: `
                 <div style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF;padding:12px 16px;border-radius:8px;margin-bottom:20px;font-family:sans-serif;font-size:13px;">
                   <strong>Intended Recipient:</strong> ${escapeHtml(recipientEmail)}<br/>
-                  <em>Note: Delivered via Resend development sandbox. To deliver directly to ${escapeHtml(recipientEmail)}, verify domain <code>2srinnovations.com</code> in your Resend dashboard or configure SMTP.</em>
+                  <em>Note: Delivered via Resend development sandbox. To deliver directly to ${escapeHtml(recipientEmail)}, verify domain <code>2srinnovations.com</code> in your Resend dashboard or configure Hostinger SMTP.</em>
                 </div>
                 ${htmlContent}
               `,
@@ -173,43 +209,10 @@ ${message || "No additional description provided."}
         }
       }
 
-      // If SMTP is not available, throw the error
-      if (!process.env.SMTP_HOST) {
-        throw new Error(`Email delivery failed: ${errMessage}`)
-      }
+      throw new Error(`Email delivery failed: ${errMessage}`)
     } catch (err: any) {
       console.error("[Mailer] Failed to send via Resend:", err.message || err)
-      if (!process.env.SMTP_HOST) {
-        throw err
-      }
-    }
-  }
-
-  // 2. SMTP mode if SMTP credentials are provided
-  if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
-    try {
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: parseInt(process.env.SMTP_PORT || "587", 10),
-        secure: process.env.SMTP_SECURE === "true" || process.env.SMTP_PORT === "465",
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      })
-
-      const info = await transporter.sendMail({
-        from: `"${name} via 2SR Innovations" <${process.env.SMTP_USER}>`,
-        replyTo: email,
-        to: recipientEmail,
-        subject: `[New Enquiry: ${service}] from ${name} (${company || "Corporate"})`,
-        text: textContent,
-        html: htmlContent,
-      })
-
-      return { success: true, messageId: info.messageId, mode: "smtp" }
-    } catch (err) {
-      console.error("[Mailer] SMTP Error:", err)
+      throw err
     }
   }
 
