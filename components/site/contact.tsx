@@ -346,7 +346,7 @@ export function Contact({
                         maxLength={120}
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="e.g. Acme Corp"
+                        placeholder="e.g. Elvaris Industries"
                         className="w-full rounded-lg border border-[#CBD5E1] bg-white px-4 py-3 text-base text-[#0A1128] placeholder:text-[#94A3B8] focus:border-[#0052CC] focus:outline-none focus:ring-1 focus:ring-[#0052CC]"
                       />
                     </div>
