@@ -134,7 +134,7 @@ export function Contact({
         }
 
         setServerError(
-          data.error || "Unable to send inquiry. Please try again or reach out to roohi.salar@2srinnovations.com directly."
+          data.error || "Unable to send inquiry. Please try again or reach out to hr@2srinnovations.com directly."
         )
         setLoading(false)
         return
@@ -153,7 +153,7 @@ export function Contact({
       })
     } catch {
       setServerError(
-        "A network error occurred. Please check your connection or contact roohi.salar@2srinnovations.com directly."
+        "A network error occurred. Please check your connection or contact hr@2srinnovations.com directly."
       )
     } finally {
       setLoading(false)
@@ -217,6 +217,15 @@ export function Contact({
 
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#64748B]">
+                  Office Location
+                </p>
+                <p className="mt-1 font-serif text-xl sm:text-2xl font-normal text-[#0A1128]">
+                  {contactInfo.address}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#64748B]">
                   Operating Hours
                 </p>
                 <p className="mt-1 text-base text-[#475569]">
@@ -242,7 +251,7 @@ export function Contact({
                   </h3>
                   
                   <p className="mt-3.5 max-w-lg text-pretty text-base sm:text-lg leading-relaxed text-[#334155]">
-                    Our team will review your requirements and get back to you shortly.
+                    Our team will review your requirements and get back to you shortly. A notification has been sent to our corporate desk at <strong className="text-[#0A1128]">{contactInfo.emailGeneral}</strong>.
                   </p>
 
                   <div className="mt-8 flex flex-wrap items-center gap-4">

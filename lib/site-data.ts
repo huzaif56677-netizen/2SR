@@ -7,13 +7,13 @@ export const nav = [
 ]
 
 export const contactInfo = {
-  phone: "+91 91139 61458",
-  phoneRaw: "+919113961458",
-  emailHr: "roohi.salar@2srinnovations.com",
-  emailGeneral: "roohi.salar@2srinnovations.com",
+  phone: "+91 89048 72159",
+  phoneRaw: "+918904872159",
+  emailHr: "hr@2srinnovations.com",
+  emailGeneral: "hr@2srinnovations.com",
   website: "www.2srinnovations.com",
   hours: "Monday – Saturday, 9:00 AM – 6:30 PM IST",
-  address: "India",
+  address: "RT Nagar Bangalore",
 }
 
 // Client / partner items shown in the marquee.

@@ -72,6 +72,12 @@ export function Footer() {
                   {contactInfo.emailHr}
                 </a>
               </div>
+              <div className="flex items-start gap-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#64748B]">Address:</span>
+                <span className="font-medium text-[#0A1128]">
+                  {contactInfo.address}
+                </span>
+              </div>
               <div className="flex items-center gap-2 pt-1 text-xs text-[#64748B]">
                 <span>{contactInfo.hours}</span>
               </div>

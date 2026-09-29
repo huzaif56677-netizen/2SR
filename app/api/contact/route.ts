@@ -104,7 +104,7 @@ export async function POST(req: Request) {
       })
     }
 
-    // 6. Secure Server-side dispatch to roohi.salar@2srinnovations.com
+    // 6. Secure Server-side dispatch to hr@2srinnovations.com
     await sendEnquiryEmail({
       name,
       company,
@@ -128,7 +128,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         success: false,
-        error: error?.message || "Unable to process your request at this time. Please reach out to roohi.salar@2srinnovations.com directly.",
+        error: error?.message || "Unable to process your request at this time. Please reach out to hr@2srinnovations.com directly.",
       },
       { status: 500 }
     )

@@ -11,7 +11,7 @@ export interface SendEnquiryParams {
 }
 
 export async function sendEnquiryEmail(params: SendEnquiryParams): Promise<{ success: boolean; messageId?: string; mode: string }> {
-  const recipientEmail = process.env.CONTACT_NOTIFICATION_EMAIL || "roohi.salar@2srinnovations.com"
+  const recipientEmail = process.env.CONTACT_NOTIFICATION_EMAIL || "hr@2srinnovations.com"
   const { name, company, email, phone, service, message, ip } = params
 
   const timestamp = new Date().toLocaleString("en-US", {
@@ -46,7 +46,7 @@ export async function sendEnquiryEmail(params: SendEnquiryParams): Promise<{ suc
         <div class="container">
           <div class="header">
             <h1>New Corporate Enquiry Received</h1>
-            <p>2SR Innovations — Direct Consultation Portal</p>
+            <p>2SR Innovations — Direct Consultation Portal (${escapeHtml(recipientEmail)})</p>
           </div>
           <div class="content">
             <span class="pill">${escapeHtml(service)}</span>
@@ -87,7 +87,7 @@ export async function sendEnquiryEmail(params: SendEnquiryParams): Promise<{ suc
             </div>
           </div>
           <div class="footer">
-            Confidential Enquiry sent via 2SR Innovations Corporate Website System.
+            Confidential Enquiry sent to ${escapeHtml(recipientEmail)} via 2SR Innovations Corporate Website System.
           </div>
         </div>
       </body>
@@ -96,6 +96,7 @@ export async function sendEnquiryEmail(params: SendEnquiryParams): Promise<{ suc
 
   const textContent = `
 NEW CORPORATE ENQUIRY - 2SR INNOVATIONS
+Recipient:           ${recipientEmail}
 ---------------------------------------------
 Service Requirement: ${service}
 Client Name:         ${name}
@@ -133,13 +134,54 @@ ${message || "No additional description provided."}
         const data = await res.json()
         return { success: true, messageId: data.id, mode: "resend" }
       }
+
       const errData = await res.json().catch(() => null)
       const errMessage = errData?.message || (await res.text().catch(() => "Unknown Resend error"))
-      console.error("[Mailer] Resend API error:", errMessage)
-      throw new Error(`Email delivery failed: ${errMessage}`)
+      console.warn("[Mailer] Resend API error:", res.status, errMessage)
+
+      // Handle Resend unverified testing domain restriction (only allows sending to account owner in test mode)
+      if (res.status === 403 && typeof errMessage === "string" && errMessage.includes("own email address")) {
+        const ownerMatch = errMessage.match(/\(([^)]+)\)/)
+        const ownerEmail = ownerMatch ? ownerMatch[1] : null
+        if (ownerEmail) {
+          console.log(`[Mailer] Resend sandbox mode detected. Delivering to verified account owner (${ownerEmail}) for intended recipient: ${recipientEmail}...`)
+          const fallbackRes = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              from: process.env.RESEND_FROM_EMAIL || "2SR Innovations <onboarding@resend.dev>",
+              to: [ownerEmail],
+              reply_to: email,
+              subject: `[For: ${recipientEmail}] [New Enquiry: ${service}] from ${name} (${company || "Corporate"})`,
+              html: `
+                <div style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF;padding:12px 16px;border-radius:8px;margin-bottom:20px;font-family:sans-serif;font-size:13px;">
+                  <strong>Intended Recipient:</strong> ${escapeHtml(recipientEmail)}<br/>
+                  <em>Note: Delivered via Resend development sandbox. To deliver directly to ${escapeHtml(recipientEmail)}, verify domain <code>2srinnovations.com</code> in your Resend dashboard or configure SMTP.</em>
+                </div>
+                ${htmlContent}
+              `,
+              text: `Intended Recipient: ${recipientEmail}\n\n${textContent}`,
+            }),
+          })
+          if (fallbackRes.ok) {
+            const data = await fallbackRes.json()
+            return { success: true, messageId: data.id, mode: "resend-sandbox-delivered" }
+          }
+        }
+      }
+
+      // If SMTP is not available, throw the error
+      if (!process.env.SMTP_HOST) {
+        throw new Error(`Email delivery failed: ${errMessage}`)
+      }
     } catch (err: any) {
       console.error("[Mailer] Failed to send via Resend:", err.message || err)
-      throw err
+      if (!process.env.SMTP_HOST) {
+        throw err
+      }
     }
   }
 
